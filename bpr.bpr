@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="bpr.exe"/>
+    <OBJFILES value="bpr.obj dft.obj Matrix.obj model.obj Vector.obj PNGImage\pngimage.obj 
+      Dynamic_Array.obj Components\Base\PBase.obj Forms\ObectsLibrary.obj 
+      Forms\main.obj Forms\Scope.obj Components\PGridComponent.obj 
+      Components\Forms\frmProp.obj Components\Forms\EditGrid.obj"/>
+    <RESFILES value="bpr.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) Forms\ObectsLibrary.dfm Forms\main.dfm Forms\Scope.dfm 
+      Components\Forms\frmProp.dfm Components\Forms\EditGrid.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="bcb2kaxserver.lib indy.lib dbxcds.lib dclocx.lib soaprtl.lib bcbie.lib 
+      nmfast.lib dbexpress.lib inetdbxpress.lib inetdbbde.lib bcbsmp.lib 
+      dsnapcon.lib dsnapcrba.lib visualdbclx.lib teeqr.lib dss.lib tee.lib 
+      teedb.lib teeui.lib qrpt.lib bdecds.lib cds.lib ibxpress.lib vcldbx.lib 
+      bdertl.lib adortl.lib vcldb.lib rtl.lib vcl.lib"/>
+    <SPARELIBS value="vcl.lib rtl.lib vcldb.lib adortl.lib bdertl.lib vcldbx.lib ibxpress.lib 
+      cds.lib bdecds.lib qrpt.lib teeui.lib teedb.lib tee.lib dss.lib teeqr.lib 
+      visualdbclx.lib dsnapcrba.lib dsnapcon.lib bcbsmp.lib inetdbbde.lib 
+      inetdbxpress.lib dbexpress.lib nmfast.lib bcbie.lib soaprtl.lib dclocx.lib 
+      dbxcds.lib indy.lib bcb2kaxserver.lib"/>
+    <PACKAGES value="vcl.bpi rtl.bpi bcb2kaxserver.bpi bcbie.bpi inet.bpi inetdb.bpi dbrtl.bpi 
+      dsnap.bpi bdertl.bpi vclx.bpi vcldb.bpi vcldbx.bpi adortl.bpi bcbsmp.bpi 
+      bdecds.bpi cds.bpi visualclx.bpi visualdbclx.bpi dbexpress.bpi dbxcds.bpi 
+      dss.bpi teeui.bpi teedb.bpi tee.bpi ibxpress.bpi indy.bpi dsnapcrba.bpi 
+      dsnapcon.bpi vclie.bpi xmlrtl.bpi inetdbbde.bpi inetdbxpress.bpi 
+      nmfast.bpi dclocx.bpi qrpt.bpi soaprtl.bpi teeqr.bpi webdsnap.bpi websnap.bpi"/>
+    <PATHCPP value=".;Components\Base;Forms;Forms;Forms;Components;Components\Forms;Components\Forms"/>
+    <PATHPAS value=".;PNGImage"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="bpr.cpp"/>
+    <INCLUDEPATH value="Components\Forms;Components;Forms;Components\Base;PNGImage;$(BCB)\include;$(BCB)\include\vcl"/>
+    <LIBPATH value="Components\Forms;Components;Forms;Components\Base;PNGImage;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-IComponents\Forms -IComponents -IForms -IComponents\Base -IPNGImage 
+      -I$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -boa"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tW -tWM"/>
+    <PFLAGS value="-$Y- -$L- -$D- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-D&quot;&quot; -H:0x1000000 -Hc:0x1000000 -Sc:0x100000 -aa -Tpe -x -Gn"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="bpr.res" FORMNAME="" UNITNAME="bpr.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="bpr.cpp" FORMNAME="" UNITNAME="bpr" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="dft.cpp" FORMNAME="" UNITNAME="dft" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Matrix.cpp" FORMNAME="" UNITNAME="matrix" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="model.cpp" FORMNAME="" UNITNAME="model" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="bpr.todo" FORMNAME="" UNITNAME="bpr.todo" CONTAINERID="ToDo" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vector.cpp" FORMNAME="" UNITNAME="Vector" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="PNGImage\pngimage.pas" FORMNAME="" UNITNAME="pngimage" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Dynamic_Array.cpp" FORMNAME="" UNITNAME="Dynamic_Array" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Components\Base\PBase.cpp" FORMNAME="" UNITNAME="PBase" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Forms\ObectsLibrary.cpp" FORMNAME="frmObjLib" UNITNAME="ObectsLibrary" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Forms\main.cpp" FORMNAME="frmMain" UNITNAME="main" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Forms\Scope.cpp" FORMNAME="frmScope" UNITNAME="Scope" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Components\PGridComponent.cpp" FORMNAME="" UNITNAME="PGridComponent" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Components\Forms\frmProp.cpp" FORMNAME="frmProperty" UNITNAME="frmProp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Components\Forms\EditGrid.cpp" FORMNAME="frmEditGrid" UNITNAME="EditGrid" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=1
+MajorVer=0
+MinorVer=1
+Release=3
+Build=11
+Debug=0
+PreRelease=1
+Special=0
+Private=0
+DLL=0
+Locale=1049
+CodePage=1251
+
+[Version Info Keys]
+CompanyName=Виталий Ананьев
+FileDescription=Электрическая система
+FileVersion=0.1.3.11
+InternalName=Power System
+LegalCopyright=Ананьев Виталий (с) 2012
+LegalTrademarks=
+OriginalFilename=
+ProductName=Power System
+ProductVersion=0.1 (Violet)
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=5
+Item0=Components\Forms;Components;Forms;Components\Base;PNGImage;$(BCB)\include;$(BCB)\include\vcl
+Item1=Components;Forms;Components\Base;PNGImage;$(BCB)\include;$(BCB)\include\vcl
+Item2=Forms;Components\Base;PNGImage;$(BCB)\include;$(BCB)\include\vcl
+Item3=PNGImage;C:\Documents and Settings\vananiev.MERANETWORKS\Desktop\PNGImage;$(BCB)\include;$(BCB)\include\vcl
+Item4=$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=5
+Item0=Components\Forms;Components;Forms;Components\Base;PNGImage;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item1=Components;Forms;Components\Base;PNGImage;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item2=Forms;Components\Base;PNGImage;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item3=PNGImage;C:\Documents and Settings\vananiev.MERANETWORKS\Desktop\PNGImage;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item4=$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=1
+Item0=_DEBUG
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=1
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>

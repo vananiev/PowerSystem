@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="copyright" content="© 2002 MBLab computer software">
+<title>Выбор аппроксимирующей функции</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+<table bgcolor="#C0C0C0" border="0" width="100% "><tbody><tr><td align="LEFT">
+<p align="CENTER"><font color="#000000" face="MS Sans Serif" size="4"><font color="#0000FF"><b>Выбор аппроксимирующей функции
+<br>
+</b></font></font></p>
+
+</td><td align="RIGHT"><font face="Arial" size="2"><a href="http://rus.mblabsoft.com/articles/ferbook/trebovania_k_approkcimiryutei_fynktii.htm"><img src="%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_files/btnleft.gif" border="0"></a> <a href="http://rus.mblabsoft.com/articles/ferbook/vvedenie.htm"><img src="%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_files/btnup.gif" border="0"></a> <a href="http://rus.mblabsoft.com/articles/ferbook/metod_opredelenia_koeffitientov_approkcimatii.htm"><img src="%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_files/btnright.gif" border="0"></a></font></td></tr></tbody></table><br>
+
+<font color="#000000" face="MS Sans Serif" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Для
+ аппроксимации кривых намагничивания магнитопроводов трансформаторов 
+желательно применять аналитические функции, которые не содержат сложные 
+многочлены. В работе <a href="http://rus.mblabsoft.com/articles/ferbook/literatyra.htm">[18]</a>
+ представлены наиболее часто используемые функции, имеющие одну или две 
+постоянные (см. таблицу 2.1). Применение той или иной формулы зависит от
+ конкретных условий моделирования процесса намагничивания. Некоторые 
+формулы достаточно точно аппроксимируют кривую намагничивания в 
+начальной части, другие - на ее "колене".
+<br>
+
+<br>
+<p align="RIGHT"><font color="#000000" face="MS Sans Serif" size="1"><font color="#00007F">Таблица 2.1</font></font><font color="#000000" face="MS Sans Serif" size="2"><font color="#007F00">
+<br>
+</font></font></p><p align="CENTER"><font color="#000000" face="MS Sans Serif" size="2"><font color="#007F00">Формулы аппpоксимации основной кривой намагничивания с одной и двумя постоянными
+<br>
+</font></font><font color="#000000" face="MS Sans Serif" size="2"><img src="%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_files/tabl15.gif" alt="tabl15.gif" height="560" width="492">
+<br>
+</font></p><font color="#000000" face="MS Sans Serif" size="2">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Наиболее полно <a href="http://rus.mblabsoft.com/articles/ferbook/trebovania_k_approkcimiryutei_fynktii.htm">требованиям к аппроксимирующим функциям</a> удовлетворяет формула арктангенса с тремя коэффициентами и линейным членом <a href="http://rus.mblabsoft.com/articles/ferbook/literatyra.htm">[63]</a>:
+<br>
+<table border="0" cellpadding="0" cellspacing="0"><tbody><tr valign="TOP"><td width="493"></td><td><font color="#000000" face="MS Sans Serif" size="2"></font></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0"><tbody><tr valign="TOP"><td width="493"><font color="#000000" face="MS Sans Serif" size="2"><img src="%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_files/embdim265.gif" alt="embdim265.gif" height="19" width="158">.</font></td><td><font color="#000000" face="MS Sans Serif" size="2">(2.1)
+&nbsp;<br>
+</font></td></tr><tr valign="TOP"><td><font color="#000000" face="MS Sans Serif" size="2"></font></td></tr></tbody></table>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Она
+ обеспечивает достаточно точное приближение на всех характерных участках
+ кривой намагничивания, а ее производная имеет относительно простое 
+математическое описание
+<br>
+<table border="0" cellpadding="0" cellspacing="0"><tbody><tr valign="TOP"><td width="493"></td><td><font color="#000000" face="MS Sans Serif" size="2"></font></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0"><tbody><tr valign="TOP"><td width="493"><font color="#000000" face="MS Sans Serif" size="2"><img src="%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_files/embdim266.gif" alt="embdim266.gif" height="42" width="130">.</font></td><td><font color="#000000" face="MS Sans Serif" size="2">(2.2)
+&nbsp;<br>
+</font></td></tr><tr valign="TOP"><td><font color="#000000" face="MS Sans Serif" size="2"></font></td></tr></tbody></table>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Так как коэффициенты аппроксимации <img src="%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_files/embdim267.gif" alt="embdim267.gif" height="8" width="9">, <img src="%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_files/embdim268.gif" alt="embdim268.gif" height="15" width="7">, <img src="%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_files/embdim269.gif" alt="embdim269.gif" height="11" width="7">
+ всегда положительные величины отличные от нуля, то в операциях деления,
+ при численном интегрировании систем нелинейных дифференциальных 
+уравнений, при любом значении напряженности <img src="%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_files/embdim270.gif" alt="embdim270.gif" height="11" width="14"> производная не равна нулю, что повышает вычислительную устойчивость системы.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;На рис. 2.1 и 2.2 
+представлены аппроксимации кривой намагничивания выбранной функцией 
+электротехнической стали марки М3411 и магнитопровода трансформатора 
+напряжения НКФ-220.
+<br>
+
+<br>
+<p align="CENTER"><img src="%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_files/risyn31.gif" alt="risyn31.gif" height="283" width="418">
+<br>
+</p><font color="#000000" face="MS Sans Serif" size="1"><font color="#00007F">Pис. 2.1.</font></font><font color="#000000" face="MS Sans Serif" size="1"><font color="#007F00"> Аппроксимация кривой намагничивания электротехнической стали М3411 функцией <img src="%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_files/embdim271.gif" alt="embdim271.gif" height="18" width="155">: <img src="%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_files/embdim272.gif" alt="embdim272.gif" height="8" width="10">= 1,05536; <img src="%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_files/embdim273.gif" alt="embdim273.gif" height="15" width="7">= 0,008687; <img src="%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_files/embdim274.gif" alt="embdim274.gif" height="11" width="7">= 9,1927е-5.
+<br>
+</font></font><font color="#000000" face="MS Sans Serif" size="2">
+<br>
+<p align="CENTER"><img src="%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_files/risyn32.gif" alt="risyn32.gif" height="286" width="421">
+<br>
+</p></font><font color="#000000" face="MS Sans Serif" size="1"><font color="#00007F">Pис. 2.2.</font></font><font color="#000000" face="MS Sans Serif" size="1"><font color="#007F00"> Аппроксимация кривой намагничивания трансформатора напряжения НКФ-220 функцией <img src="%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_files/embdim275.gif" alt="embdim275.gif" height="18" width="147">: <img src="%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_files/embdim276.gif" alt="embdim276.gif" height="8" width="10">= 506,976; <img src="%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_files/embdim277.gif" alt="embdim277.gif" height="15" width="7">= 15,61; <img src="%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_files/embdim278.gif" alt="embdim278.gif" height="11" width="7">= 74,234.</font></font><font color="#000000" face="MS Sans Serif" size="2"><font color="#007F00">
+<br>
+</font></font></font>
+
+
+</font></body></html>

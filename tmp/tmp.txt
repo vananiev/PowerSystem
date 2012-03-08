@@ -1,0 +1,205 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Scope.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TfrmScope *frmScope;
+extern double TIME;
+Graphics::TBitmap *out = new Graphics::TBitmap();
+Types::TRect Rect;   // eaeiai ?acia?a i?yiioaieuiee canvas
+// i?aaaeuiua cia?aiey a?aoeea
+double Xmax=0.01;
+double Xmin=0;
+double Ymax=5;
+double Ymin=-5;
+int Can_Width=1024;
+int Can_Height=1024;
+vector<double> X;
+vector<double> Y;
+double *Signal=NULL;       // auaiaeiue neaiae
+double *SignalBase=NULL;	// ioiineoaeuii eaeiai neaiaea
+const double CurrentBase=0;// aaciaue o?iaaiu aey oiea = 0 
+double Grid_Step;        	// naoea a?aoeea. oaa
+unsigned NumScreens=0;  	// ?enei io?eniaaiiuo ye?aiia
+//---------------------------------------------------------------------------
+double scale_X(double x)
+   { frmScope->Scroll->Max = x/(Xmax-Xmin)*100; return (out->Width*(x/(Xmax-Xmin) - frmScope->Scroll->Position/100)); }
+double scale_Y(double y)
+   { return out->Height/2 - out->Height*y/(Ymax-Ymin); }
+//---------------------------------------------------------------------------
+// Ie?oaeaiea e aee?aeoaio n caaaiiui eiee?anoaii ciaeia iinea caiyoie.
+// value - ie?oaeyaiia cia?aiea
+// digits - eiee?anoai ciaeia iinea caiyoie
+double RoundTo(double value, int digits) {
+   double temp = pow10(digits-1);
+   return (floor(value*temp)+0.5)/temp;
+}
+//---------------------------------------------------------------------------
+// i?enoea iiey aey a?aoeea
+void Graph_Clear(Graphics::TBitmap *gr, double from_x=Xmin){
+   if(gr->Width <= 0 || gr->Height<=0) return;
+   // i?euaai
+   gr->Canvas->Rectangle(0,0,gr->Width+1,gr->Height+1);
+   // auaia naoee
+   unsigned step =  Grid_Step;        // oaa naoee
+   unsigned From_X = scale_X(from_x); // aaa ia?aei ii O ii ieenaeai
+   TColor PenColor = gr->Canvas->Pen->Color;
+   int PenWidth =  gr->Canvas->Pen->Width;
+   gr->Canvas->Pen->Color=(TColor)RGB(128,128,128); //Caaaai oaao ia?a
+   gr->Canvas->Pen->Width=1;   //Caaaai oe?eio  ia?a
+   for(int w= -From_X; w<gr->Width; w=w+step){
+      gr->Canvas->MoveTo(w, 0);
+      gr->Canvas->LineTo(w, gr->Height);
+      gr->Canvas->TextOutA(w+2,gr->Height-16, FloatToStr(RoundTo(from_x+Xmin+(Xmax-Xmin)*((double)w/gr->Width),4)).c_str());
+      }
+   for(int h=0;h<gr->Height; h=h+step){
+      gr->Canvas->MoveTo(0, h);
+      gr->Canvas->LineTo(gr->Width, h);
+      gr->Canvas->TextOutA(2,h-14, FloatToStr(RoundTo(Ymin+(Ymax-Ymin)*((double)h)/gr->Height,4)).c_str());
+      }
+   // ainnoaiaaeeaaai ia?aiao?u ia?a
+   gr->Canvas->Pen->Color=PenColor; //Caaaai oaao ia?a
+   gr->Canvas->Pen->Width=PenWidth;   //Caaaai oe?eio  ia?a
+}
+//---------------------------------------------------------------------------
+__fastcall TfrmScope::TfrmScope(TComponent* Owner)
+   : TForm(Owner)
+{
+   //Caaaai oaao ia?a
+   out->Canvas->Pen->Color=(TColor)RGB(0,0,0);
+   //Caaaai oe?eio  ia?a
+   out->Canvas->Pen->Width=1;
+   // Oaao eenoe
+   out->Canvas->Brush->Color=clBtnFace;
+   //Oaao oaenoa
+   out->Canvas->Font->Color=clGrayText;
+   //?acia? o?eooa a oi?eao
+   out->Canvas->Font->Size=8;
+   //Noeeu o?eooa
+   TFontStyles tFontStyle;
+   //Ca?a?eiooue, iaeeiiiue, ?e?iue, iia?aieiooue
+   //tFontStyle << fsStrikeOut << fsItalic << fsBold << fsUnderline;
+   //tFontStyle << fsBold;
+   out->Canvas->Font->Style =tFontStyle;
+   //Eiy o?eooa
+   out->Canvas->Font->Name="Times";
+   // naoea a?aoeea. oaa
+   Grid_Step=50;
+   Scroll->Min = 0;
+   Scroll->Max = 0;
+   frmScope = this;
+}
+//---------------------------------------------------------------------------
+void __fastcall TfrmScope::TimerTimer(TObject *Sender)
+{
+   X.push_back(TIME);
+   Y.push_back(*Signal);
+   Scroll->Position = Scroll->Max-50;
+   ScrollChange(Timer);
+   double x= scale_X(TIME);
+   double y= scale_Y(*Signal - *SignalBase);
+   out->Canvas->LineTo(x, y);
+   Graph->Canvas -> CopyRect(::Rect, out -> Canvas, ::Rect);
+}
+//---------------------------------------------------------------------------
+void __fastcall TfrmScope::btnStartClick(TObject *Sender)
+{
+	if(rbCurrent->Checked){ // ia?eai oie
+   	if(!TryStrToInt(cmbBranches->Text,NULL) ) {ShowMessage("Ia aa?iue iiia? aaoee");return;}
+   	Signal = obj->I[StrToInt(cmbBranches->Text)];  // a?aoee ?aai no?iei
+   	SignalBase = (double*)&CurrentBase;
+      }
+   else if(rbVoltage){  // Iai?y?aiea
+   	if(!TryStrToInt(cmbPot1->Text,NULL) || !TryStrToInt(cmbPot2->Text,NULL) ) {ShowMessage("Ia aa?iue iiia? ocea");return;}
+   	Signal = obj->f[StrToInt(cmbPot1->Text)];
+   	SignalBase = obj->f[StrToInt(cmbPot2->Text)];
+   	}
+   // auaia naoee
+   Graph_Clear(out);
+   //Ii?ii ia?aianoeou ia?i a enoiaio? oi?eo oae
+   double x= scale_X(TIME);
+   double y= scale_Y(*Signal - *SignalBase);
+   out->Canvas->MoveTo(x,y);
+   Timer->Enabled=true;
+}
+//---------------------------------------------------------------------------
+void __fastcall TfrmScope::btnPauseClick(TObject *Sender)
+{
+   Timer->Enabled=false;
+}
+//---------------------------------------------------------------------------
+void __fastcall TfrmScope::FormResize(TObject *Sender)
+{
+   bool tmr=Timer->Enabled;
+   Timer->Enabled=false;
+   Graph->Top=0; Graph->Left=0;
+   Graph->Height=Height-pnlControl->Height-47;
+   Graph->Width=Width-9;
+   pnlControl->Left=0;
+   pnlControl->Width=Width-9;
+   pnlControl->Top=Height-pnlControl->Height-35;
+   Scroll->Width=Width;
+   Scroll->Top=Height-pnlControl->Height-47;
+   out->Width = Graph->Width;
+   out->Height = Graph->Height;
+   ::Rect.left=scale_X(Scroll->Position*(Xmax-Xmin)/100);
+   ::Rect.bottom=0;
+   ::Rect.right=::Rect.left+out->Width;
+   ::Rect.top=out->Height;
+   // auaia naoee
+   Graph_Clear(out,Scroll->Position*(Xmax-Xmin)/100);
+   //onoaiaaeeaaai ia?i
+   if(Signal){
+   	double x= scale_X(TIME);
+   	double y= scale_Y(*Signal - *SignalBase);
+   	out->Canvas->MoveTo(x,y);
+   	}
+   Timer->Enabled=tmr;
+}
+//---------------------------------------------------------------------------
+void __fastcall TfrmScope::btnStopClick(TObject *Sender)
+{
+   Timer->Enabled=false;
+   X.clear();
+   Y.clear();
+}
+//---------------------------------------------------------------------------
+void __fastcall TfrmScope::FormPaint(TObject *Sender)
+{
+   Graph->Canvas -> CopyRect(::Rect, out -> Canvas, ::Rect); // auaiaei a?aoee
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmScope::pnlControlResize(TObject *Sender)
+{
+   btnStop->Left = pnlControl->Width-btnStop->Width-5;
+   btnPause->Left = pnlControl->Width-btnStop->Width-btnPause->Width-5;
+   btnStart->Left = pnlControl->Width-btnStop->Width-btnPause->Width-btnStart->Width-5;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmScope::FormHide(TObject *Sender)
+{
+   frmScope->~TfrmScope();   
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmScope::ScrollChange(TObject *Sender)
+{
+	Graph_Clear(out, Scroll->Position*(Xmax-Xmin)/100);
+   ::Rect.left=scale_X(Scroll->Position*(Xmax-Xmin)/100);
+   ::Rect.bottom=0;
+   ::Rect.right=::Rect.left+out->Width;
+   ::Rect.top=out->Height;
+   //onoaiaaeeaaai ia?i
+   if(Signal){
+   	double x= scale_X(TIME);
+   	double y= scale_Y(*Signal - *SignalBase);
+   	out->Canvas->MoveTo(x,y);
+   	}
+}
+//---------------------------------------------------------------------------

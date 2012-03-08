@@ -1,0 +1,12 @@
+   PType fa(double &time){ return 100*exp(-time/0.1) +100*sin(w*time);} 
+   PType I_F_TA(PType &F){  	return 2e25*pow(F,7)+1e4*F;}
+   TA.R1(0);
+   TA.L1(0);
+   TA.R2(1.2);    // номинальная загрузка
+   TA.L2(0);
+   TA.n1 = 1;
+   TA.n2 = 20;
+   TA.I1 = 100;
+   TA.S = 30;
+   TA.K = 10;
+   PType q = 85*M_PI/180;       // отношение активных потерь к реактивным, считаем по умолчанию

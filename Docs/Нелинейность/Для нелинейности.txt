@@ -1,0 +1,22 @@
+   A.BAX.set(0,0);
+   A.BAX.set(0.9,0.9);
+   A.BAX.set(4,1.1);
+   *A.R[0] = 1e-3;
+   *A.R[1] = 1e-3;
+bool tstA::update_sources(bool force_update){ *E[2] = sin(100*M_PI*TIME); return true;}
+
+   A.BAX.set(-100,-200);
+   A.BAX.set(0,0);
+   A.BAX.set(0.5,0.0625);
+   A.BAX.set(0.67,0.125);
+   A.BAX.set(0.77,0.167);
+   A.BAX.set(0.89,0.333);
+   A.BAX.set(7.8,42.56)
+   
+   
+   A.BAX.set(0,0);
+   A.BAX.set(0.5,0.0625);
+   A.BAX.set(0.67,0.125);
+   A.BAX.set(0.77,0.167);
+   A.BAX.set(0.89,0.333);
+   A.BAX.set(7.8,42.56)

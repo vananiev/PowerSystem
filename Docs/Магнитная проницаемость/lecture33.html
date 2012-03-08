@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD html 3.2 Final//EN">
+<html><head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="keywords" content="Электротехника ТОЭ ОТЦ ТЭЦ РТЦ Высшая математика Решение Расчет задач контрольная типовой расчет
+Линейные электрические цепи постоянного тока переменного Трехфазные Переходные процессы нелинейной по характеристикам для мгновенных значений магнитной при постоянных м.д.с. интеграл Дюамеля законы Кирхгофа метод контурных токов узловых потенциалов эквивалентный генератор
+">
+<meta name="author" content="Max Zolotukhin">
+<meta name="description" content="Теория">
+<title>Общая характеристика задач и методов расчета магнитных цепей. (Лекция N 33)
+</title>
+<link href="lecture33_files/index.css" rel="stylesheet" type="text/css">
+</head>
+<body leftmargin="0" topmargin="0" marginheight="0" text="black">
+<table align="center" bgcolor="#000070" border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody><tr>
+<td bordercolor="#000070" valign="bottom">
+<h1 align="left">Решение задач по ТОЭ, ОТЦ, Высшей математике, Физике, Программированию...</h1>
+<a class="none" href="http://www.toehelp.ru/">
+<img src="lecture33_files/main.gif" alt="Решение задач по ТОЭ, ОТЦ, ТЭЦ, Высшей математике www.toehelp.ru" border="0">
+</a>
+</td>
+<td bordercolor="#000070" align="right" valign="top">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-8994276510209841";
+/* toehelp_top 468x60 */
+google_ad_slot = "7520334006";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript" src="lecture33_files/show_ads.js">
+</script>
+<br>
+<iframe id="orphus" src="lecture33_files/orphus.htm" frameborder="0" height="21" scrolling="no" width="121"></iframe>
+
+</td>
+</tr>
+</tbody></table>
+<table class="tdmenu" align="center" border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody><tr><td class="line_menu" align="center"><a class="link_menu" href="http://www.toehelp.ru/">Главная</a></td>
+<td class="line_menu" align="center"><a class="link_menu" href="http://www.toehelp.ru/price.html">Цены</a></td>
+<td class="line_menu" align="center"><a class="link_menu" href="http://www.toehelp.ru/payment.html">Оплата</a></td>
+<td class="line_menu" align="center"><a class="link_menu" href="http://www.toehelp.ru/exampls.html">Примеры решений</a></td>
+<td class="line_menu" align="center"><a class="link_menu" href="http://www.toehelp.ru/newgb/">Отзывы</a></td>
+<td class="line_menu" align="center"><a class="link_menu" href="http://www.toehelp.ru/links.html">Ccылки</a></td>
+<td class="line_menu" align="center"><a class="link_menu" href="http://www.toehelp.ru/theory/">Теория</a></td>
+<td class="line_menu" align="center"><a class="link_menu" href="http://www.toehelp.ru/books/">Книги</a></td>
+<td class="line_menu" align="center"><a class="link_menu" href="http://www.toehelp.ru/agrement.html">Сотрудничество</a></td>
+<td class="line_menu" align="center"><a class="link_menu" href="http://www.toehelp.ru/forum/">Форум</a></td>
+</tr></tbody></table>
+<table class="tdmenu2" align="center" border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody><tr>
+  <td>&nbsp;&nbsp;&nbsp;<b><a href="http://www.toehelp.ru/theory/">Теория</a> / <a href="http://www.toehelp.ru/theory/toe/contents.html">ТОЭ</a> / Лекция N 33.</b> Общая характеристика задач и методов расчета магнитных цепей.</td>
+</tr>
+</tbody></table>
+<table align="center" border="1" cellpadding="10" cellspacing="0" width="100%">
+   <tbody><tr>
+     <td class="line1bb">
+<p>Указанная в предыдущей лекции формальная аналогия между электрическими и магнитными 
+  цепями позволяет распространить все методы и технику расчета нелинейных резистивных 
+  цепей постоянного тока на нелинейные магнитные цепи. При этом для наглядности 
+  можно составить <b>эквивалентную электрическую схему замещения </b>исходной 
+  магнитной цепи, с использованием которой выполняется расчет.</p>
+<p>Нелинейность магнитных цепей определяется нелинейным характером зависимости 
+  <img src="lecture33_files/image002-32.gif" align="absbottom" height="25" width="60"> , являющейся аналогом ВАХ <img src="lecture33_files/image004-32.gif" align="absbottom" height="24" width="40"> &nbsp;и определяемой характеристикой 
+  ферромагнитного материала <img src="lecture33_files/image006-29.gif" align="absbottom" height="24" width="45"> . При расчете магнитных цепей 
+  при постоянных потоках обычно используют основную кривую намагничивания. Петлеобразный 
+  характер зависимости <img src="lecture33_files/image008-29.gif" align="absbottom" height="24" width="45"> &nbsp;учитывается при расчете постоянных 
+  магнитов и электротехнических устройств на их основе.</p>
+<p>При расчете магнитных цепей на практике встречаются две типичные задачи:</p>
+<p><span>-</span>задача определения величины намагничивающей силы (НС), необходимой 
+  для создания заданного магнитного потока (заданной магнитной индукции) на каком 
+  - либо участке магнитопровода (<b>задача синтеза </b>или<b> “прямая“ задача</b>);</p>
+<p><span>-</span>задача нахождения потоков (магнитных индукций) на отдельных участках 
+  цепи по заданным значениям НС (<b>задача анализа </b>или <b>“обратная” задача</b>).</p>
+<p>Следует отметить, что задачи второго типа являются обычно более сложными и 
+  трудоемкими в решении.</p>
+<p>В общем случае в зависимости от типа решаемой задачи (“прямой” или “обратной”) 
+  решение может быть осуществлено следующими методами: </p>
+<p><span>-</span>регулярными;</p>
+<p><span>-</span>графическими;</p>
+<p><span>-</span>итерационными.</p>
+<p>При этом при использовании каждого из этих методов первоначально необходимо 
+  указать на схеме направления НС, если известны направления токов в обмотках, 
+  или задаться их положительными направлениями, если их нужно определить. Затем 
+  задаются положительными направлениями магнитных потоков, после чего можно переходить 
+  к составлению эквивалентной схемы замещения и расчетам. </p>
+<p>Магнитные цепи по своей конфигурации могут быть подразделены на <b>неразветвленные 
+  </b>и <b>разветвленные. </b>В неразветвленной магнитной цепи на всех ее участках 
+  имеет место один и тот же поток, т.е. различные участки цепи соединены между 
+  собой последовательно. Разветвленные магнитные цепи содержат два и более контура.</p>
+<p>&nbsp;</p>
+<p align="center"><b>Регулярные методы расчета </b></p>
+<p>Данными методами решаются задачи первого типа <span>-</span>”прямые” задачи. 
+  При этом в качестве исходных данных для расчета заданы конфигурация и основные 
+  геометрические размеры магнитной цепи, кривая (кривые) намагничивания ферромагнитного 
+  материала и магнитный поток или магнитная индукция в каком-либо сечении магнитопровода. 
+  Требуется найти НС, токи обмоток или, при известных значениях последних, число 
+  витков.</p>
+<p>&nbsp;</p>
+<p align="center"><b>1. Прямая” задача для неразветвленной магнитной цепи</b></p>
+<p>Решение задач подобного типа осуществляется в следующей последовательности:</p>
+<p>1. Намечается средняя линия (см. пунктирную линию на рис.1), которая затем 
+  делится на участки с одинаковым сечением магнитопровода. </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.
+ Исходя из постоянства магнитного потока вдоль всей цепи, определяются 
+  значения индукции для каждого <img src="lecture33_files/image010-25.gif" align="bottom" height="19" width="11"> <span>-</span>го участка:</p>
+<p align="center"> <img src="lecture33_files/image012-25.gif" align="left" height="290" hspace="12" width="305"> <img src="lecture33_files/image014-26.gif" height="52" width="60"> .</p>
+<p>3. По кривой намагничивания для каждого значения <img src="lecture33_files/image016-25.gif" align="absbottom" height="25" width="20"> &nbsp;находятся напряженности <img src="lecture33_files/image018-24.gif" align="absbottom" height="25" width="24"> &nbsp;на ферромагнитных участках; напряженность 
+  поля в воздушном зазоре определяется согласно </p>
+<p align="center"> <img src="lecture33_files/image020-24.gif" height="53" width="203"> </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.
+ По второму закону Кирхгофа для магнитной цепи определяется искомая 
+  НС путем суммирования падений магнитного напряжения вдоль контура: </p>
+<p align="center"> <img src="lecture33_files/image022-22.gif" height="28" width="181"> ,</p>
+<p>где <img src="lecture33_files/image024-24.gif" align="absbottom" height="20" width="16"> <span>-</span>длина воздушного 
+  зазора.</p>
+<p align="center">&nbsp;</p>
+<p align="center"><b>2. “Прямая” задача для разветвленной магнитной цепи </b></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Расчет разветвленных магнитных цепей основан на совместном применении 
+  первого и второго законов Кирхгофа для магнитных цепей. 
+Последовательность решения 
+  задач данного типа в целом соответствует рассмотренному выше алгоритму
+ решения 
+  “прямой” задачи для неразветвленной цепи. При этом для определения 
+магнитных 
+  потоков на участках магнитопровода, для которых магнитная 
+напряженность известна 
+  или может быть вычислена на основании второго закона Кирхгофа, следует
+ использовать 
+  алгоритм</p>
+<table align="center" border="0" width="275">
+  <tbody><tr>
+    <td width="57"><img src="lecture33_files/image026-25.gif" align="absbottom" height="25" width="48"></td>
+    <td width="24">по</td>
+    <td width="53"><img src="lecture33_files/image028-25.gif" align="absbottom" height="24" width="45"></td>
+    <td width="139"><img src="lecture33_files/image030-21.gif" align="absbottom" height="25" width="120"> </td>
+  </tr>
+</tbody></table>
+
+<p> В остальных случаях неизвестные магнитные потоки определяются на 
+  основании первого закона Кирхгофа для магнитных цепей.</p>
+<p> <img src="lecture33_files/image032-20.gif" align="left" height="252" hspace="12" width="297"> В качестве примера анализа 
+  разветвленной магнитной цепи при заданных геометрии магнитной цепи на рис. 2 
+  и характеристике <img src="lecture33_files/image033-14.gif" align="absbottom" height="24" width="45"> &nbsp;ферромагнитного сердечника определим 
+  НС <img src="lecture33_files/image035-12.gif" align="absbottom" height="20" width="56"> , необходимую для создания в воздушном 
+  зазоре индукции <img src="lecture33_files/image037-14.gif" align="absbottom" height="25" width="25"> .</p>
+<p>Алгоритм решения задачи следующий:</p>
+<p>1. Задаем положительные направления магнитных потоков в стержнях магнитопровода 
+  (см. рис. 2).</p>
+<p>2. Определяем напряженность в воздушном зазоре <img src="lecture33_files/image039-12.gif" align="absbottom" height="52" width="75"> &nbsp;и по зависимости <img src="lecture33_files/image040-22.gif" align="absbottom" height="24" width="45"> &nbsp;для <img src="lecture33_files/image042-22.gif" align="absbottom" height="25" width="64"> &nbsp;- значение <img src="lecture33_files/image044-24.gif" align="absbottom" height="25" width="28"> .</p>
+<p>3. По второму закону Кирхгофа для правого контура можно записать</p>
+<p align="center"> <img src="lecture33_files/image046-24.gif" height="25" width="181"> </p>
+<p>откуда находим <img src="lecture33_files/image048-23.gif" align="absbottom" height="25" width="28"> &nbsp;и по зависимости <img src="lecture33_files/image049-14.gif" align="absbottom" height="24" width="45"> &nbsp;- <img src="lecture33_files/image051-13.gif" align="absbottom" height="25" width="24"> .</p>
+<p>4. В соответствии с первым законом Кирхгофа</p>
+<p align="center"> <img src="lecture33_files/image053-15.gif" height="25" width="139"> .</p>
+<p>Тогда <img src="lecture33_files/image055-15.gif" align="absbottom" height="25" width="91"> , и по зависимости <img src="lecture33_files/image056-20.gif" align="absbottom" height="24" width="45"> &nbsp;определяем <img src="lecture33_files/image058-19.gif" align="absbottom" height="25" width="27"> .</p>
+<p>5. В соответствии со вторым законом Кирхгофа для искомой НС имеет место уравнение</p>
+<p align="center"> <img src="lecture33_files/image060-20.gif" height="25" width="141"> .</p>
+<p>&nbsp;</p>
+<p align="center"><b>Графические методы расчета</b></p>
+<p>Графическими методами решаются задачи второго типа <span>-</span> “обратные” 
+  задачи. При этом в качестве исходных данных для расчета заданы конфигурация 
+  и геометрические размеры магнитной цепи, кривая (кривые) намагничивания ферромагнитного 
+  материала, а также НС обмоток. Требуется найти значения потоков (индукций) на 
+  отдельных участках магнитопровода.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Данные методы основаны на графическом представлении вебер<span>-</span>амперных 
+  характеристик <img src="lecture33_files/image062-20.gif" align="absbottom" height="25" width="60"> &nbsp;линейных и нелинейных участков 
+  магнитной цепи с последующим решением алгебраических уравнений, записанных по 
+  законам Кирхгофа, с помощью соответствующих графических построений на плоскости.</p>
+<p>&nbsp;</p>
+<p align="center"><b>1. “Обратная” задача для неразветвленной магнитной цепи </b></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Решение задач подобного типа осуществляется в следующей 
+последовательности: 
+</p>
+<p>1. Задаются значениями потока и определяют для них НС <img src="lecture33_files/image064-20.gif" align="absbottom" height="28" width="79"> , как при решении “прямой” задачи. 
+  При этом следует стремиться подобрать два достаточно близких значения потока, 
+  чтобы получить <img src="lecture33_files/image066-20.gif" align="absbottom" height="28" width="47"> , несколько меньшую и несколько 
+  большую заданной величины НС.</p>
+<p> 2. По полученным данным строится часть характеристики <img src="lecture33_files/image068-21.gif" align="absbottom" height="28" width="72"> &nbsp;магнитной цепи (вблизи заданного 
+  значения НС), и по ней определяется поток, соответствующий заданной величине 
+  НС.</p>
+<p>При расчете неразветвленных магнитных цепей, содержащих воздушные зазоры, удобно 
+  использовать метод пересечений, при котором искомое решение определяется точкой 
+  пересечения нелинейной вебер<span>-</span>амперной характеристики нелинейной 
+  части цепи и линейной характеристики линейного участка, строящейся на основании 
+  уравнения </p>
+<p align="center"> <img src="lecture33_files/image070-23.gif" height="25" width="328"> </p>
+<p>где <img src="lecture33_files/image072-22.gif" align="absbottom" height="25" width="135"> <span>-</span>магнитное сопротивление 
+  воздушного зазора.</p>
+<p>&nbsp;</p>
+<p align="center"><b>2. “Обратная” задача для разветвленной магнитной цепи</b></p>
+<p> <img src="lecture33_files/image074-21.gif" align="left" height="192" hspace="12" width="254">Замена магнитной цепи эквивалентной электрической схемой замещения (см. рис. 
+  3, на котором приведена схема замещения магнитной цепи на рис. 2) позволяет 
+  решать задачи данного типа с использованием всех графических методов и приемов, 
+  применяемых при анализе аналогичных нелинейных электрических цепей постоянного 
+  тока.</p>
+<p>В этом случае при расчете магнитных цепей, содержащих два узла (такую конфигурацию 
+  имеет большое число используемых на практике магнитопроводов), широко используется 
+  метод двух узлов. Идея решения данным методом аналогична рассмотренной для нелинейных 
+  резистивных цепей постоянного тока и заключается в следующем: </p>
+<p>1. Вычисляются зависимости <img src="lecture33_files/image076-19.gif" align="absbottom" height="25" width="79"> &nbsp;потоков во всех <img src="lecture33_files/image078-18.gif" align="absbottom" height="19" width="11"> <span>-</span>х ветвях магнитной 
+  цепи в функции общей величины <span>-</span>магнитного напряжения <img src="lecture33_files/image080-18.gif" align="absbottom" height="25" width="45"> &nbsp;между узлами <img src="lecture33_files/image082-20.gif" align="absbottom" height="16" width="19"> &nbsp;и <img src="lecture33_files/image084-20.gif" align="absbottom" height="16" width="15"> .</p>
+<p>2. Определяется, в какой точке графически реализуется первый закон Кирхгофа 
+  <img src="lecture33_files/image086-22.gif" align="absbottom" height="28" width="131"> &nbsp;Соответствующие данной точке 
+  потоки являются решением задачи.</p>
+<p>&nbsp;</p>
+<p align="center"><b>Итерационные методы расчета</b></p>
+<p>Данные методы, сущность которых была рассмотрена при анализе нелинейных резистивных 
+  цепей постоянного тока, являются приближенными численными способами решения 
+  нелинейных алгебраических уравнений, описывающих состояние магнитной цепи. Как 
+  было отмечено выше, они хорошо поддаются машинной алгоритмизации и в настоящее 
+  время широко используются при исследовании сложных магнитных цепей на ЦВМ. При 
+  анализе относительно простых цепей, содержащих небольшое число узлов и нелинейных 
+  элементов в эквивалентной электрической схеме замещения (обычно до двух-трех), 
+  возможна реализация методов “вручную”.</p>
+<p>В качестве примера приведем алгоритм расчета магнитной цепи на рис. 1, в которой 
+  при заданных геометрии магнитопровода, характеристике <img src="lecture33_files/image087-14.gif" align="absbottom" height="24" width="45"> &nbsp;материала сердечника и величине 
+  НС F необходимо найти поток Ф.</p>
+<p>В соответствии с пошаговым расчетом для данной цепи можно записать</p>
+<table border="0" width="95%">
+  <tbody><tr> 
+    <td align="center" height="16" nowrap="nowrap" width="93%"><img src="lecture33_files/image089-14.gif" height="25" width="211"> ,&nbsp;&nbsp;</td>
+    <td align="right" height="16" width="7%">(1)</td>
+  </tr>
+</tbody></table>
+<p>&nbsp;</p>
+<p>где <img src="lecture33_files/image091-15.gif" align="absbottom" height="25" width="105"> .</p>
+<p>Задаемся значением <img src="lecture33_files/image093-18.gif" align="absbottom" height="25" width="25"> , вычисляем для <img src="lecture33_files/image095-17.gif" align="absbottom" height="19" width="11"> -х участков магнитопровода <img src="lecture33_files/image097-18.gif" align="absbottom" height="25" width="95"> , по кривой намагничивания <img src="lecture33_files/image098-15.gif" align="absbottom" height="24" width="45"> &nbsp;находим <img src="lecture33_files/image100-17.gif" align="absbottom" height="25" width="31"> , подсчитываем <img src="lecture33_files/image102-17.gif" align="absbottom" height="25" width="131"> &nbsp;и по (1) определяем <img src="lecture33_files/image104-16.gif" align="absbottom" height="25" width="41"> &nbsp;для следующего приближения и 
+  т.д., пока с заданной погрешностью не будет выполняться равенство <img src="lecture33_files/image106-19.gif" align="absbottom" height="25" width="81"> .</p>
+<p>&nbsp;</p>
+<p align="center"><b>Статическая и дифференциальная индуктивности катушки <br>
+  с ферромагнитным сердечником</b></p>
+<p>Пусть имеем катушку с ферромагнитным сердечником, представленную на рис. 4.</p>
+<p> <img src="lecture33_files/image108-19.gif" align="left" height="179" hspace="12" width="180"> В соответствии с определением 
+  потокосцепления</p>
+<table border="0" width="95%">
+  <tbody><tr> 
+    <td align="center" height="16" nowrap="nowrap" width="93%"><img src="lecture33_files/image110-17.gif" height="24" width="117"> ,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td align="right" height="16" width="7%">(2)</td>
+  </tr>
+</tbody></table>
+<p>&nbsp;</p>
+<p>и на основании закона полного тока <img src="lecture33_files/image112-17.gif" align="absbottom" height="20" width="63"> , откуда </p>
+<table border="0" width="95%">
+  <tbody><tr> 
+    <td align="center" height="16" nowrap="nowrap" width="93%"><img src="lecture33_files/image114-20.gif" height="48" width="65"> .&nbsp;</td>
+    <td align="right" height="16" width="7%">(3)</td>
+  </tr>
+</tbody></table>
+<p>&nbsp;</p>
+<p>Из соотношений (2) и (3) вытекает, что функция <img src="lecture33_files/image116-18.gif" align="absbottom" height="25" width="39"> &nbsp;качественно имеет такой же вид, 
+  что и <img src="lecture33_files/image117-15.gif" align="absbottom" height="24" width="45"> . Таким образом, зависимости относительной 
+  магнитной проницаемости <img src="lecture33_files/image119-19.gif" align="absbottom" height="25" width="45"> &nbsp;и индуктивности <img src="lecture33_files/image121-17.gif" align="absbottom" height="25" width="85"> &nbsp;также подобны, т.е. представленные 
+  в предыдущей лекции на рис. 2 кривые <img src="lecture33_files/image123-18.gif" align="absbottom" height="25" width="63"> &nbsp;и <img src="lecture33_files/image125-17.gif" align="absbottom" height="25" width="55"> &nbsp;качественно аналогичны кривым 
+  <img src="lecture33_files/image127-18.gif" align="absbottom" height="25" width="53"> &nbsp;и <img src="lecture33_files/image129-16.gif" align="absbottom" height="25" width="45"> .</p>
+<p>Статическая индуктивность катушки с ферромагнитным сердечником</p>
+<p align="center"> <img src="lecture33_files/image131-14.gif" height="56" width="151"> ;</p>
+<p>дифференциальная индуктивность </p>
+<p align="center"> <img src="lecture33_files/image133-14.gif" height="48" width="153"> .</p>
+<p>Если магнитную проводимость сердечника на рис. 4 обозначить через <img src="lecture33_files/image135-13.gif" align="absbottom" height="25" width="32"> , то <img src="lecture33_files/image137-12.gif" align="absbottom" height="25" width="84"> &nbsp;и <img src="lecture33_files/image139-12.gif" align="absbottom" height="29" width="140"> , откуда </p>
+<table border="0" width="95%">
+  <tbody><tr> 
+    <td align="center" height="16" nowrap="nowrap" width="93%"><img src="lecture33_files/image141-10.gif" height="48" width="205"></td>
+    <td align="right" height="16" width="7%">(4)</td>
+  </tr>
+</tbody></table>
+<p>&nbsp;</p>
+<p>Используя соотношение (4), покажем влияние воздушного зазора на индуктивность 
+  катушки.</p>
+<p>Пусть катушка на рис. 4 имеет воздушный зазор <img src="lecture33_files/image142-15.gif" align="absbottom" height="20" width="16"> . Тогда полное магнитное сопротивление 
+  контура</p>
+<p align="center"> <img src="lecture33_files/image144-11.gif" height="52" width="216"> ,</p>
+<p>откуда </p>
+<p align="center"> <img src="lecture33_files/image146-12.gif" height="52" width="152"> .</p>
+<p>При <img src="lecture33_files/image148-11.gif" align="absbottom" height="25" width="179"> , следовательно</p>
+<p align="center"> <img src="lecture33_files/image150-10.gif" height="48" width="151"> .</p>
+<p>Таким образом, воздушный зазор линеаризует катушку с ферромагнитным сердечником. 
+  Зазор, для которого выполняется неравенство <img src="lecture33_files/image152-8.gif" align="absbottom" height="24" width="63"> , называется <b>большим зазором. 
+  </b></p>
+<p>&nbsp;</p>
+<p align="center"><b>Литература</b></p>
+<ol>
+  <li><b>Основы </b>теории цепей: Учеб. для вузов /Г.В.Зевеке, П.А.Ионкин, А.В.Нетушил, 
+    С.В.Страхов. –5-е изд., перераб. –М.: Энергоатомиздат, 1989. -528с.</li>
+  <li><b>Бессонов Л.А. </b>Теоретические основы электротехники: Электрические 
+    цепи. Учеб. для студентов электротехнических, энергетических и приборостроительных 
+    специальностей вузов. –7-е изд., перераб. и доп. –М.: Высш. шк., 1978. –528с.</li>
+  <li><b>Теоретические </b>основы электротехники. Учеб. для вузов. В трех т. Под 
+    общ. ред. К.М.Поливанова. Т.2. Жуховицкий Б.Я., Негневицкий И.Б. Линейные 
+    электрические цепи (продолжение). Нелинейные цепи. –М.:Энергия- 1972. –200с.</li>
+</ol>
+<p align="center"><b>Контрольные вопросы и задачи</b></p>
+<p>&nbsp;</p>
+<ol>
+  <li>Какие два типа задач встречаются при расчете магнитных цепей? Дайте им характеристику.</li>
+  <li>Какие существуют методы расчета магнитных цепей?</li>
+  <li>Какими методами решаются «обратные» задачи?</li>
+  <li>Как влияет воздушный зазор на индуктивность нелинейной катушки?</li>
+  <li>Что такое большой зазор?</li>
+  <li>В магнитной цепи на рис. 2 заданы <img src="lecture33_files/image154-8.gif" align="absmiddle" height="25" width="24"> &nbsp;и <img src="lecture33_files/image156-7.gif" align="absbottom" height="20" width="56"> . Составить алгоритм расчета длины 
+    воздушного зазора <img src="lecture33_files/image157-10.gif" align="absbottom" height="20" width="16"> .</li>
+  <li>Составить алгоритм итерационного расчета потока в воздушном зазоре магнитной 
+    цепи на рис. 2 при заданной НС <img src="lecture33_files/image158-7.gif" align="absbottom" height="20" width="56"> .</li>
+  <li>Запишите закон электромагнитной индукции с использованием статической <img src="lecture33_files/image160-7.gif" align="absbottom" height="25" width="31"> &nbsp;и дифференциальной <img src="lecture33_files/image162-7.gif" align="absbottom" height="25" width="23"> &nbsp;индуктивностей.</li>
+</ol>
+     </td>
+   </tr>
+</tbody></table>
+<noindex>
+<center>
+<script type="text/javascript"><!--
+google_ad_client = "pub-8994276510209841";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel ="";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "000000";
+google_color_url = "666666";
+google_color_text = "000070";
+//--></script>
+<script type="text/javascript" src="lecture33_files/show_ads.js">
+</script>
+</center>
+<br>
+
+
+<center>
+<script language="JavaScript"> var loc = ''; </script>
+<script language="JavaScript1.4">try{ var loc = escape(top.location.href); }catch(e){;}</script>
+<script language="JavaScript">
+var userid = 74296059; var page = 1;
+var rndnum = Math.round(Math.random() * 999111);
+document.write('<iframe src="http://ad11.bannerbank.ru/bb.cgi?cmd=ad&hreftarget=_blank&pubid=' + userid + '&pg=' + page + '&vbn=1552&w=468&h=60&num=1&r=ssi&ssi=nofillers&r=ssi&nocache=' + rndnum + '&ref=' + escape(document.referrer) + '&loc=' + loc + '" frameborder=0 vspace=0 hspace=0 width=468 height=60 marginwidth=0 marginheight=0 scrolling=no>');
+document.write('<a href="http://ad11.bannerbank.ru/bb.cgi?cmd=go&pubid=' + userid + '&pg=' + page + '&vbn=1552&num=1&w=468&h=60&nocache=' + rndnum + '&loc=' + loc + '&ref=' + escape(document.referrer) + '" target="_blank">');
+document.write('<img src="http://ad11.bannerbank.ru/bb.cgi?cmd=ad&pubid=' + userid + '&pg=' + page + '&vbn=1552&num=1&w=468&h=60&nocache=' + rndnum + '&ref=' + escape(document.referrer) + '&loc=' + loc + '" width=468 height=60 Alt="Education Banner Network - Образовательная Баннерная Сеть" border=0></a></iframe>');
+</script><iframe class=" vnbripksbrjognhhytmt" src="lecture33_files/bb.htm" vspace="0" hspace="0" marginwidth="0" marginheight="0" frameborder="0" height="60" scrolling="no" width="468">&lt;a
+ 
+href="http://ad11.bannerbank.ru/bb.cgi?cmd=go&amp;pubid=74296059&amp;pg=1&amp;vbn=1552&amp;num=1&amp;w=468&amp;h=60&amp;nocache=955775&amp;loc=http%3A//www.toehelp.ru/theory/toe/lecture33/lecture33.html&amp;ref=http%3A//www.google.ru/url%3Fsa%3Dt%26rct%3Dj%26q%3D%25D0%25BC%25D0%25B5%25D1%2582%25D0%25BE%25D0%25B4+%25D0%25B4%25D0%25B2%25D1%2583%25D1%2585+%25D1%2583%25D0%25B7%25D0%25BB%25D0%25BE%25D0%25B2+%25D0%25B4%25D0%25BB%25D1%258F+%25D0%25BC%25D0%25B0%25D0%25B3%25D0%25BD%25D0%25B8%25D1%2582%25D0%25BD%25D0%25BE%25D0%25B9+%25D1%2586%25D0%25B5%25D0%25BF%25D0%25B8%26source%3Dweb%26cd%3D1%26ved%3D0CCkQFjAA%26url%3Dhttp%253A%252F%252Fwww.toehelp.ru%252Ftheory%252Ftoe%252Flecture33%252Flecture33.html%26ei%3DqDuAT_OkGcmytAadhbW8BA%26usg%3DAFQjCNHNf_e8XjqLobQN5UL_GtNIzGeENg"
+ target="_blank"&gt;&lt;img 
+src="http://ad11.bannerbank.ru/bb.cgi?cmd=ad&amp;pubid=74296059&amp;pg=1&amp;vbn=1552&amp;num=1&amp;w=468&amp;h=60&amp;nocache=955775&amp;ref=http%3A//www.google.ru/url%3Fsa%3Dt%26rct%3Dj%26q%3D%25D0%25BC%25D0%25B5%25D1%2582%25D0%25BE%25D0%25B4+%25D0%25B4%25D0%25B2%25D1%2583%25D1%2585+%25D1%2583%25D0%25B7%25D0%25BB%25D0%25BE%25D0%25B2+%25D0%25B4%25D0%25BB%25D1%258F+%25D0%25BC%25D0%25B0%25D0%25B3%25D0%25BD%25D0%25B8%25D1%2582%25D0%25BD%25D0%25BE%25D0%25B9+%25D1%2586%25D0%25B5%25D0%25BF%25D0%25B8%26source%3Dweb%26cd%3D1%26ved%3D0CCkQFjAA%26url%3Dhttp%253A%252F%252Fwww.toehelp.ru%252Ftheory%252Ftoe%252Flecture33%252Flecture33.html%26ei%3DqDuAT_OkGcmytAadhbW8BA%26usg%3DAFQjCNHNf_e8XjqLobQN5UL_GtNIzGeENg&amp;loc=http%3A//www.toehelp.ru/theory/toe/lecture33/lecture33.html"
+ width=468 height=60 Alt="Education Banner Network - Образовательная 
+Баннерная Сеть" border=0&gt;&lt;/a&gt;</iframe>
+<br></center>
+<center>
+<small><a href="http://edbn.ru/" target="_top">Education Banner Network (468x60) - Образовательная Баннерная Сеть</a></small></center>
+
+
+
+
+<p align="center">
+<!--begin of Rambler's Top100 code -->
+<a href="http://top100.rambler.ru/top100/">
+<img src="lecture33_files/top100.gif" alt="" border="0" height="1" width="1"></a>
+<!-- HotLog begin -->
+<script language="javascript">
+hotlog_js="1.0";
+hotlog_r=""+Math.random()+"&s=77199&im=105&r="+escape(document.referrer)+"&pg="+
+escape(window.location.href);
+document.cookie="hotlog=1; path=/"; hotlog_r+="&c="+(document.cookie?"Y":"N");
+</script><script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+<script language="javascript1.2">
+hotlog_js="1.2";
+hotlog_r+="&wh="+screen.width+'x'+screen.height+"&px="+
+(((navigator.appName.substring(0,3)=="Mic"))?
+screen.colorDepth:screen.pixelDepth)</script>
+<script language="javascript1.3">hotlog_js="1.3"</script>
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+document.write("<a href='http://click.hotlog.ru/?77199' target='_top'><img "+
+" src='http://hit4.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&' border=0 width=88 height=31 alt=HotLog></a>")</script><a href="http://click.hotlog.ru/?77199" target="_top"><img src="lecture33_files/count.gif" alt="HotLog" border="0" height="31" width="88"></a>
+<noscript><a href=http://click.hotlog.ru/?77199 target=_top><img
+src="http://hit4.hotlog.ru/cgi-bin/hotlog/count?s=77199&im=105" border=0 
+width="88" height="31" alt="HotLog"></a></noscript>
+<!--Rating@Mail.ru COUNTER-->
+<script language="JavaScript"><!--
+d=document;a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3"><!--
+js=13//--></script><script language="JavaScript"><!--
+d.write('<a href="http://top.mail.ru/jump?from=468019"'+
+' target=_top><img src="http://top.list.ru/counter'+
+'?id=468019;t=242;js='+js+a+';rand='+Math.random()+
+'" alt="Рейтинг@Mail.ru"'+' border=0 height=31 width=88></a>')
+if(js>11)d.write('<'+'!-- ')//--></script><a href="http://top.mail.ru/jump?from=468019" target="_top"><img src="lecture33_files/counter.gif" alt="Рейтинг@Mail.ru" border="0" height="31" width="88"></a><!-- <noscript><a target=_top href="http://top.mail.ru/jump?from=468019"><img src="http://top.list.ru/counter?js=na;id=468019;t=242" border=0 height=31 width=88 alt="Рейтинг@Mail.ru"></a></noscript><script language="JavaScript"><!--
+if(js>11)d.write('--'+'>')//-->
+<!--RAX counter begin -->
+<script language="JavaScript"><!--
+document.write('<a href="http://www.rax.ru/click" '+
+'target=_blank><img src="http://counter.yadro.ru/hit?t20.6;r'+
+escape(document.referrer)+((typeof(screen)=='undefined')?'':
+';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+';'+Math.random()+
+'" alt="rax.ru: показано число хитов за 24 часа, посетителей за 24 часа и за сегодн\я" '+
+'border=0 width=88 height=31></a>')//--></script><a href="http://www.rax.ru/click" target="_blank"><img src="lecture33_files/hit.gif" alt="rax.ru: показано число хитов за 24 часа, посетителей за 24 часа и за сегодня" border="0" height="31" width="88"></a>
+</p>
+<!-- AdMedia code START -->
+<script language="JavaScript"><!--
+var RndNum4NoCash = Math.round(Math.random() * 1000000000);
+document.write('<script language="JavaScript" src="http://ad.adriver.ru/cgi-bin/erle.cgi?sid=40303&target=top&bt=16&pz=0&rnd=' + RndNum4NoCash + '"><\/script>');
+//--></script><script language="JavaScript" src="lecture33_files/erle.js"></script><!-- AdMedia code END -->
+</noindex>
+
+
+
+
+</body></html>

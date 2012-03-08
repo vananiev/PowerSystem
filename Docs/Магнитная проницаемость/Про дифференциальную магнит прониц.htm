@@ -1,0 +1,793 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta name="keywords" content="силовые трансформаторы">
+
+<title>Переходные процессы при включении силового трансформатора в сеть с синусоидальным напряжением</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="description" content="Переходные процессы при включении силового трансформатора в сеть с синусоидальным напряжением">
+<link href="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/power.css" rel="stylesheet" type="text/css">
+<link rel="icon" href="http://power-e.ru/favicon.ico" type="image/x-icon">
+<script type="text/javascript">var MODX_MEDIA_PATH = "media";</script>
+<script language="JavaScript" type="text/JavaScript">
+function email (login, sc)
+{
+     var serv = new Array;
+    serv[0] = "finestreet.ru";
+    eml = login +  "@" + serv[sc];
+    return eml;
+}
+function mail (login, sc)
+{
+document.write (email(login, sc));
+}
+function to_mail (login, sc, sub)
+{
+eml = "mailto:" + email(login, sc);
+if (sub != "") eml += "?subject=" + sub;
+window.location.href = eml;
+}
+</script></head>
+
+<body onselectstart="return false" oncopy="return false">
+<div id="container">
+<div id="top_adv">
+<div class="advert">
+<style type="text/css">
+<!--
+#symadblock {margin:0;padding:0;}
+#symadblock table {font-size:0.8em;background: #bc8cbf url('http://www.symmetron.ru/pics/tbl-bg.gif') bottom right no-repeat; margin: 5px 20px 10px 0;}
+#symadblock h1 {font-size:1.2em;color:#fff;text-align:center; padding:0; margin:0 20px 5px 20px;}
+#symadblock a:link {color:#fff;}
+#symadblock a:visited {color:#fff;}
+#symadblock a:hover {color:#f7941c; text-decoration:none;}
+-->
+</style>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td width="60%" align="right">
+
+<div id="symadblock">
+<table border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr height="17">
+		<td height="17" width="17"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/tbl-tl.gif" alt="" height="17" width="17"></td>
+		<td></td>
+		<td height="17" width="17"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/tbl-tr.gif" alt="" height="17" width="17"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+<a href="http://www.symmetron.ru/suppliers/powerelectronics/index.shtml?from=power-e.ru" target="_blank&quot;"><h1>Поставки компонентов для<br>
+силовой электроники</h1></a>
+		</td>
+		<td></td>
+	</tr>
+	<tr height="17">
+		<td><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/tbl-bl.gif" alt="" height="17" width="17"></td>
+		<td></td>
+		<td></td>
+	</tr>
+</tbody></table>
+</div>
+
+		</td>
+		<td width="40%">
+
+<a href="http://www.symmetron.ru/suppliers/powerelectronics/index.shtml?from=power-e.ru%20TARGET=_blank"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/symmetron110px.gif" alt="Симметрон: поставки электронных компонентов" border="0" height="29" width="110"></a>
+
+		</td>
+	</tr>
+</tbody></table>
+</div>
+</div>
+
+ <div id="header">
+   <a href="http://www.power-e.ru/index.php"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/logo.gif" alt="Силовая электроника" longdesc="index.php" border="0" height="69" width="205" align="left"></a>
+  <div id="right_menu"><div id="flag"><a href="http://www.power-e.ru/eng.php"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/flag_eng.gif" alt="Power electronics" border="0" height="15" width="30"></a></div>
+ 	<div id="icons"><a href="http://www.power-e.ru/index.php"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/home.gif" alt="На главную" longdesc="index.php" border="0" height="15" width="15"></a><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/icon_div.gif" height="10" width="27"><a href="http://www.power-e.ru/feedback.php"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/mail.gif" alt="Обратная связь" border="0" height="15" width="15"></a><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/icon_div.gif" height="10" width="27"><a href="http://www.power-e.ru/map.php"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/map.gif" alt="Карта сайта" longdesc="index.php" border="0" height="15" width="15"></a></div>
+</div>
+   <div id="up_menu">
+<div id="up_menu_p"><dl><a href="http://www.power-e.ru/adv.php" class="up_menu_w">Рекламодателям</a></dl></div>
+<div id="up_menu_p"><dl><a href="http://www.power-e.ru/bye.php" class="up_menu_w">Купить</a></dl></div>
+<div id="up_menu_p"><dl><a href="http://www.power-e.ru/archive.php" class="up_menu_w">Архив номеров</a></dl></div>
+<div id="up_menu_p"><dl><a href="http://www.forum-e.ru/" class="up_menu_w" target="_blank">Форум</a></dl></div>
+<div id="up_menu_p"><dl><a href="http://www.power-e.ru/author.php" class="up_menu_w">Авторам</a></dl></div>
+<div id="up_menu_p"><dl><a href="http://www.power-e.ru/subscribe.php" class="up_menu_w">Подписаться</a></dl></div>
+<div id="up_menu_p"><dl><a href="http://www.power-e.ru/market.php" class="up_menu_w">Обзор рынка</a></dl></div>
+<div id="up_menu_p"><dl><a href="http://www.power-e.ru/contact.php" class="up_menu_w">Контакты</a></dl></div>
+   </div>
+</div>
+<div id="up_div"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/spacer.gif"></div>
+<table bgcolor="#0C4DA2" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody><tr>
+    <td bgcolor="#FFFFFF" valign="top" width="203">
+<div id="logo_adv">
+<div class="advert">
+<div style="text-align:center;"><!--[if IE]><object classid="clsid:25336920-03F9-11CF-8FD0-00AA00686F13" data="/link.php?url=http://banner.kit-e.ru/banner_show.php&amp;rotator=21" style="width:202px; height:404px; overflow:hidden; border:none;"> <p>Your browser doesn't support objects</p></object><![endif]--><!--[if !IE]> <--><object type="text/html" data="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/banner_show_004.htm" style="width: 200px; height: 404px; overflow: hidden; border: medium none;"> <p>Your browser doesn't support objects</p></object><!----> <!--[endif]----></div>
+</div>
+</div>
+
+<div id="sidebar1">
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/rubrikator.gif" height="18" hspace="1" vspace="1" width="203">
+  <div id="menu">
+	<div><a href="http://www.power-e.ru/components.php" title="Компоненты силовой электроники">Компоненты силовой электроники</a>
+<div id="menu_div"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/spacer.gif"></div></div>
+
+
+<div><a href="http://www.power-e.ru/connector.php" title="Силовые разъемы">Силовые разъемы</a>
+<div id="menu_div"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/spacer.gif"></div></div>
+
+
+<div><a href="http://www.power-e.ru/electrodrives.php" title="Электроприводы">Электроприводы</a>
+<div id="menu_div"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/spacer.gif"></div></div>
+
+
+<div><a href="http://www.power-e.ru/power_supply.php" title="Источники питания">Источники питания</a>
+<div id="menu_div"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/spacer.gif"></div></div>
+
+
+<div><a href="http://www.power-e.ru/cooling.php" title="Системы охлаждения">Системы охлаждения</a>
+<div id="menu_div"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/spacer.gif"></div></div>
+
+
+<div><a href="http://www.power-e.ru/heating.php" title="Индукционный нагрев">Индукционный нагрев</a>
+<div id="menu_div"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/spacer.gif"></div></div>
+
+
+<div><a href="http://www.power-e.ru/emc.php" title="Электромагнитная совместимость">Электромагнитная совместимость</a>
+<div id="menu_div"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/spacer.gif"></div></div>
+
+
+<div><a href="http://www.power-e.ru/equipment.php" title="Оборудование">Оборудование</a>
+<div id="menu_div"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/spacer.gif"></div></div>
+
+
+<div><a href="http://www.power-e.ru/autoelectronics.php" title="Автомобильная электроника">Автомобильная электроника</a>
+<div id="menu_div"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/spacer.gif"></div></div>
+
+
+<div><a href="http://www.power-e.ru/quality.php" title="Качество электроэнергии">Качество электроэнергии</a>
+<div id="menu_div"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/spacer.gif"></div></div>
+
+
+<div><a href="http://www.power-e.ru/sapr.php" title="Софт">Софт</a>
+<div id="menu_div"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/spacer.gif"></div></div>
+
+
+<div><a href="http://www.power-e.ru/tech.php" title="Технологии">Технологии силовой электроники</a>
+<div id="menu_div"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/spacer.gif"></div></div>
+
+
+<div><a href="http://www.power-e.ru/datas.php" title="Справочные материалы">Справочные материалы</a>
+<div id="menu_div"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/spacer.gif"></div></div>
+
+
+
+	<div><a style="font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 12px; color: rgb(255, 66, 65); font-weight: bold;" href="http://www.power-e.ru/paramsearch.php" title="Параметрический поиск источников питания">Параметрический поиск источников питания</a>
+	<div id="menu_div"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/spacer.gif"></div></div>
+</div>
+<div id="events_adv">
+<div class="advert">
+<div style="text-align:center;"><!--[if IE]><object classid="clsid:25336920-03F9-11CF-8FD0-00AA00686F13" data="/link.php?url=http://banner.kit-e.ru/banner_show.php&amp;rotator=15" style="width:202px; height:204px; overflow:hidden; border:none;"> <p>Your browser doesn't support objects</p></object><![endif]--><!--[if !IE]> <--><object type="text/html" data="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/banner_show.htm" style="width: 200px; height: 204px; overflow: hidden; border: medium none;"> <p>Your browser doesn't support objects</p></object><!----> <!--[endif]----></div>
+</div>
+</div>
+
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/sobytia.gif" height="20" hspace="1" vspace="3" width="203">
+<div class="news"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/bul_2.gif"> <b>13.03.2012</b><br>
+<a href="http://www.power-e.ru/Fotovoltika_13_03_12.php" class="no_dec">Круглый стол «Фотовольтаика — новый вектор развития электроники»</a><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/news_div.gif"></div><div class="news"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/bul_2.gif"> <b>11.03.2012</b><br>
+<a href="http://www.power-e.ru/EBV_11_03_12.php" class="no_dec">Конференция TechTrend компании EBV Elektronik</a><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/news_div.gif"></div><div class="news"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/bul_2.gif"> <b>11.01.2012</b><br>
+<a href="http://www.power-e.ru/ET-2012_11_01_12.php" class="no_dec">Форум по информационным технологиям на транспорте</a><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/news_div.gif"></div><div class="news"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/bul_2.gif"> <b>21.12.2011</b><br>
+<a href="http://www.power-e.ru/neon-ek_21.12.11.php" class="no_dec">Транзисторы Silan одобрены «ВЗПП-С»</a><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/news_div.gif"></div><div class="news"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/bul_2.gif"> <b>15.12.2011</b><br>
+<a href="http://www.power-e.ru/PromElect_2012_15_12_11.php" class="no_dec">Санкт-Петербург откроет выставку «Промышленная и Встраиваемая Электроника 2012»</a><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/news_div.gif"></div>
+<div class="news"><a href="http://www.power-e.ru/271.php">АРХИВ СОБЫТИЙ &gt;&gt;</a></div>
+
+        <div class="banner">
+	
+	</div>
+
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/news_izd.gif" height="20" hspace="1" vspace="3" width="203">
+<div class="news"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/bul_2.gif"> <b>27.02.2012</b><br>
+<a href="http://www.power-e.ru/BT_2012_1.php" class="no_dec">Новый номер журнала «Беспроводные технологии».</a><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/news_div.gif"></div><div class="news"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/bul_2.gif"> <b>06.09.2011</b><br>
+<a href="http://www.power-e.ru/1028.php" class="no_dec"></a><a href="http://power-e.ru/archive.php">Новости сайта: выложены полные тексты всех статей журнала «Силовая электроника» за 2010 год.</a><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/news_div.gif"></div><div class="news"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/bul_2.gif"> <b>07.06.2011</b><br>
+<a href="http://www.power-e.ru/PS_3_2011.php" class="no_dec">Новый номер журнала «Полупроводниковая светотехника».</a><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/news_div.gif"></div>
+<div class="news"><a href="http://www.power-e.ru/930.php">АРХИВ НОВОСТЕЙ ИЗДАТЕЛЬСТВА &gt;&gt;</a></div>
+
+</div>
+<div id="adv">
+<!-- <img src="img/reklama.gif" width="203" height="20" hspace="1" vspace="10"> -->
+</div>
+</td>
+    <td bgcolor="#0C4DA2" valign="top" width="4">&nbsp;</td>
+    <td bgcolor="#FFFFFF" valign="top">
+ <form class="FSF_form" action="23.php" method="post"><div id="search"><table class="white" border="0" width="100%"><tbody><tr><td width="60">Поиск: </td><td><input class="FSF_input" name="search" type="text"></td><td width="90" align="center"><input class="FSF_submit" name="sub" value="Искать!" type="submit"></td><td width="150" align="center"><a href="http://www.power-e.ru/search.php" class="white">Расширенный поиск</a></td></tr></tbody></table></div></form><br>
+
+<div id="search_adv">
+<div class="advert">
+<div style="text-align:center;"><!--[if IE]><object classid="clsid:25336920-03F9-11CF-8FD0-00AA00686F13" data="/link.php?url=http://banner.kit-e.ru/banner_show.php&amp;rotator=9" style="width:470px; height:64px; overflow:hidden; border:none;"> <p>Your browser doesn't support objects</p></object><![endif]--><!--[if !IE]> <--><object type="text/html" data="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/banner_show_002.htm" style="width: 468px; height: 64px; overflow: hidden; border: medium none;"> <p>Your browser doesn't support objects</p></object><!----> <!--[endif]----></div>
+</div>
+</div>
+
+<div style="-moz-user-select: none; cursor: default;" id="mainContent">
+<h2 align="right">Силовая электроника №4'2005</h2>
+<div class="text" align="right"><a href="http://www.power-e.ru/bye.php?year=2005&amp;number=4">Заказать этот номер</a></div>
+ 
+<h1>Переходные процессы при включении силового трансформатора в сеть с синусоидальным напряжением</h1>
+<h2><a href="http://www.power-e.ru/author_art.php?author=%CA%EE%F2%E5%ED%E5%E2">Сергей Котенев</a><br>
+<a href="http://www.power-e.ru/author_art.php?author=%C5%E2%F1%E5%E5%E2">Андрей Евсеев</a></h2><br>
+<p style="font-style: italic">
+В статье исследуются переходные процессы в силовом трансформаторе при 
+включении его в сеть с синусоидальным напряжением и даются рекомендации 
+для разработчиков.
+</p>
+<br>
+<p>
+Хорошо известно, что при включении силового трансформатора в сеть (даже 
+ненагруженного) возникает всплеск тока, который может превышать 
+номинальный ток во много раз. Максимальный всплеск тока (будем называть 
+далее «пусковой ток») необходимо учитывать при проектировании силовых 
+трансформаторов, так как он оказывает силовое воздействие на обмотки 
+трансформатора, а также приводит к ложному срабатыванию устройств 
+защиты.
+</p>
+<p>
+К сожалению, в литературе этот вопрос практически не рассматривался. В 
+данной статье авторы попытались рассмотреть переходные процессы в 
+силовом трансформаторе и дать рекомендации по снижению пусковых токов. В
+ дальнейшем все рассуждения будут вестись для ненагруженного 
+трансформатора.
+</p>
+<p>
+Для первичной обмотки однофазного силового трансформатора можно записать [1]:
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f01.gif" height="39" width="177">(1)
+</p>
+<p>
+где <em>u</em><em>(</em><em>t</em><em>) </em>— мгновенное значение напряжения первичной обмотки; <em>i</em><em>(</em><em>t</em><em>) </em>— мгновенное значение намагничивающего тока трансформатора; &#936;(t) мгновенное значение потокосцепления; <em>r</em>— активное сопротивление обмотки; <em>L<sub>p</sub></em>— индуктивность рассеяния обмотки.
+</p>
+<p>
+Учитывая, что у тороидальных трансформаторов индуктивность рассеяния обмотки достаточно мала, можно принять <em>L<sub>p</sub></em><em> = </em>0.
+ Кроме этого, будем предполагать, что потокосцепление &#936;(t) в уравнении 
+(1) зависит от тока. Эта зависимость задается кривой намагничивания и 
+имеет нелинейный характер. На основании определения потокосцепления 
+запишем:
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f02.gif" height="79" width="173">(2)
+</p>
+<p>
+где <em>W</em>— количество витков первичной обмотки силового трансформатора; <em>S</em><em> </em>—
+ сечение магнитопровода трансформатора; &#956;(i) — дифференциальная 
+магнитная проницаемость. Для тороидального трансформатора по закону 
+полного тока имеем:
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f03.gif" height="39" width="84">(3)
+</p>
+<p>
+где <em>l</em><em> </em>— длина средней магнитной линии. Если подставить (3) в (2) и в (1), то получим
+</p>
+<p>
+(4)
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f04.gif" height="89" width="175">(5)
+</p>
+<p>
+где &#956;(i) — дифференциальная магнитная проницаемость. Дифференциальное 
+уравнение (4) является основным при анализе переходных процессов в 
+силовом трансформаторе. Как видно из этого уравнения, намагничивающий 
+ток трансформатора имеет нелинейный характер. Анализ решения уравнения 
+(4) невозможен без конкретной зависимости <em>B </em>= <em>f</em>(<em>H</em>),
+ которую необходимо получить экспериментально. В соответствии с ГОСТ 
+21427.1-83 была измерена индукция электротехнической стали 3413 в 
+переменном магнитном поле и получена зависимость <em>B = </em><em>f</em><em>(</em><em>H</em><em>). </em>Результаты приведены в таблице 1, а график показан на рис. 1.
+</p>
+<div class="ris">
+<img alt="Рис. 1. Кривая намагничивания для стали 3413" src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_ris01.gif" height="236" width="520">
+</div>
+<div class="ris">
+Рис. 1. Кривая намагничивания для стали 3413
+</div>
+<div class="ris">
+<img alt="Таблица 1. Результаты анализа" src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_tab01.gif" height="83" width="520">
+</div>
+<div class="ris">
+Таблица 1. Результаты анализа
+</div>
+<p>
+На этом же рисунке показана кусочно-линейная аппроксимация кривой 
+намагничивания двумя отрезками прямых, причем отрезки прямых выбираются 
+так, чтобы они как можно ближе подходили к экспериментальным точкам. 
+Тогда <em>B = f</em>(<em>H</em>) можно записать в виде функции
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f05.gif" height="68" width="197">(6)
+</p>
+<p>
+где <em>h</em><em> </em>— напряженность магнитного поля в точке перегиба кривой намагничивания; <em>b </em>— индукция в точке перегиба на кривой намагничивания; <em>k </em>— коэффициент, характеризующий степень наклона участка насыщения к оси <em>Н. </em>Из (6) легко получить выражение для дифференциальной магнитной проницаемости:
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f06.gif" height="68" width="200">(7)
+</p>
+<p>
+С учетом (7) дифференциальное уравнение (4) может быть представлено в виде двух: уравнения для тока <em>i</em><sub>1</sub>(<em>t</em><em>), </em>соответствующего рабочему участку кривой намагничивания, и уравнения для тока <em>i</em><sub>2</sub>( <em>t</em><em> </em>)<em>, </em>соответствующего участку насыщения:.
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f07.gif" height="88" width="147">(8)
+</p>
+<p>
+где <img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f08.gif" height="37" width="149"> 
+</p>
+<p>
+Дифференциальные уравнения (8) решаются при начальных условиях
+</p>
+<p>
+<em>i</em><sub>1</sub>(0) = 0, <em>i</em><sub>1</sub>(<em>t</em><sub>0</sub>) = <em>i</em><sub>2</sub>(<em>t</em><sub>0</sub>), (9)
+</p>
+<p>
+где <em>t</em><em><sub>0</sub></em><em> </em>— момент времени, когда величина тока изменяется с <em>i</em><sub>1</sub>(<em>t</em><em>) </em>на <em>i</em><em><sub>2</sub></em><em>(</em><em>t</em><em>).</em> 
+</p>
+<p>
+Пусть на первичную обмотку силового трансформатора подано синусоидальное напряжение <em>u</em>(<em>t</em>) = <em>u<sub>m</sub></em>sin(&#969;<em>t </em>+ &#966;), где <em>u<sub>m</sub></em>— амплитудное значение напряжения; &#969;— частота сети; &#966; — начальная фаза.
+</p>
+<p>
+Так как в соответствии с законом электромагнитной индукции магнитный поток в сердечнике трансформатора отстает от напряжения <em>u</em><em>(</em><em>t</em><em>) </em>на &#960;/2, то максимальный всплеск тока возникает при &#966;=0, и потому интерес представляет именно этот случай.
+</p>
+<p>
+Решая дифференциальные уравнения (8) при &#966;=0, получим:
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f09.gif" height="224" width="259">
+</p>
+<p>
+Момент времени <em>t</em><em><sub>0</sub></em><em> </em>определяется как корень трансцендентного уравнения
+</p>
+<p>
+<em>i</em><sub>1</sub>(<em>t</em><sub>0</sub>) = <em>i</em><sub>0</sub> (12)
+</p>
+<p>
+при <em>i</em><sub>0</sub> = <em>hl</em><em>/</em><em>W</em><em>. </em>Выражения
+ для токов (10) и (11) позволяют полностью рассчитать переходные токи в 
+обмотке силового трансформатора при включении его в сеть с 
+синусоидальным напряжением.
+</p>
+<p>
+Для расчета был выбран трансформатор, намотанный на тороидальном 
+магнитопроводе с размерами ОЛ100/180-60 мм. Этот силовой трансформатор 
+имеет первичную обмотку <em>W</em><em> = </em>275 витков, площадь керна <em>S</em><em> = </em>0,0024 м<sup>2</sup>, омическое сопротивление обмотки <em>r = </em>0,4 Ом и длину средней магнитной линии <em>l</em><em> = </em>0,44 м. Из графика, изображенного на рис. 1, можно определить параметры <em>h</em><em> = </em>45,3 А/м и <em>b = </em>1,8 Тл.
+</p>
+<p>
+Для расчета тока было выбрано два метода. Это расчет по формулам (10), 
+(11) и непосредственное решение дифференциального уравнения (4). Расчет 
+тока по уравнению (4) имеет преимущество, так как здесь при построении 
+решения используются все экспериментальные точки, и поэтому этот подход 
+является более точным. Включение всех точек в расчет достигается за счет
+ сплайн-аппроксимации экспериментальных данных. Однако этот метод имеет и
+ недостаток, который заключается в том, что нельзя получить 
+аналитическое выражение, а значит, и нельзя проанализировать полученный 
+результат. Расчет же по формулам (10) и (11) позволяет провести анализ 
+результата, но менее точный, так как эти формулы основаны на грубой 
+аппроксимации кривой намагничивания.
+</p>
+<p>
+Возвращаясь к решению (10) и (11), заметим, что несмотря на простоту 
+формул, проводить по ним вычисление затруднительно. В связи с этим 
+получим грубую оценку максимальных значений токов <em>i </em><sub>1</sub> и <em>i</em><em><sub>2</sub></em><em>. </em>Максимальное значение <em>i </em><sub>1</sub> на рабочем участке достигается при таком <em>t</em><em>, </em>которое является корнем уравнения
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f10.gif" height="47" width="132">(13)
+</p>
+<p>
+Приблизительно вычислить первый корень уравнения (13) можно следующим 
+образом. Из таблицы 1 определяем дифференциальную магнитную 
+проницаемость на рабочем участке кривой намагничивания 
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f11.gif" height="43" width="153">
+</p>
+<p>
+Замерить индукцию на участке насыщения очень трудно, так как пусковые 
+токи для мощных силовых трансформаторов составляют сотни ампер, и 
+поэтому необходимо замерять индукцию именно при этих значениях токов. 
+Поступим следующим образом. Экстраполируем участок, соответствующий 
+большим значениям магнитного поля, прямой линией так, чтобы она явилась 
+продолжением начального участка кривой намагничивания. Такую прямую 
+линию можно построить, если выбрать &#956;<sub>2</sub>=0,0000164. 
+Допустимость такой аппроксимации должны показать конкретные замеры 
+пусковых токов и сравнения их с теоретическими вычислениями.
+</p>
+<p>
+В большинстве практических случаев выполняется условие &#969;L1 &gt;&gt;r, что дает:
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f12.gif" height="42" width="174">(14)
+</p>
+<p>
+но cos&#936;<sub>1</sub>=r/x<sub>1</sub> &lt;&lt;1, тогда &#936;1&#8776;&#960;/2
+</p>
+<p>
+Из (13) следует, что cos(&#969; t-&#936;<sub>1</sub>)&#8776;0, и тогда имеем &#969; t-&#936;<sub>1</sub>=&#960;/2, откуда следует 
+</p>
+<p>
+<em>t </em>= &#960;/&#969;. (15)
+</p>
+<p>
+С учетом (15) из формулы (10) получим максимальное значение тока <em>i </em><sub>1</sub><em>:</em>
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f13.gif" height="73" width="233">(16)
+</p>
+<p>
+Второе слагаемое в (10) определяет установившееся значение тока. Его амплитудное значение будет равно:
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f14.gif" height="72" width="351">(17)
+</p>
+<p>
+Таким образом, на рабочем участке кривой намагничивания максимальное и 
+установившееся значения токов отличаются в два раза. Дадим численную 
+оценку установившегося значения тока:
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f15.gif" height="135" width="335">(18)
+</p>
+<p>
+В соответствии с (16) <em>i </em><sub>1</sub><sub>max</sub> = <em>2</em><em>i</em><em> </em><sub>1</sub> <em>= </em>2x0,060
+ = = 0,120 А. Для качественной оценки этой величины следует определить 
+допустимое значение тока намагничивания. Допустимый ток (<em>i</em><sub>0</sub>) вычисляется как ток, соответствующий точке перегиба на кривой намагничивания:
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f16.gif" height="51" width="231">(19)
+</p>
+<p>
+И если <em>i </em><sub>1</sub><sub>max</sub> &gt; <em>i</em><sub>0</sub>, то переходный процесс в трансформаторе будет протекать с большими токами.
+</p>
+<p>
+Для вычисления пикового значения переходного тока необходимо найти 
+магнитную индукцию для рабочего участка кривой намагничивания. 
+Воспользуемся дифференциальным уравнением (1), переписав его в виде
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f17.gif" height="50" width="155">(20)
+</p>
+<p>
+Подставим в (20) выражение для тока из (10) и проинтегрируем. Тогда получим
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f18.gif" height="53" width="265">(21)
+</p>
+<p>
+Принимая во внимание условие &#969;L<sub>1</sub>&gt;&gt;r и рассуждения, сделанные при выводе соотношения (16), получим:
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f19.gif" height="50" width="95">(22)
+</p>
+<p>
+Учитывая, что участок насыщения на кривой намагничивания достаточно 
+линейный, на основании определения дифференциальной магнитной 
+проницаемости можно записать:
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f20.gif" height="47" width="81">(23)
+</p>
+<p>
+Выберем приращение для индукции и напряженности магнитного поля в виде
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f21.gif" height="76" width="208">
+</p>
+<p>
+Подставим значения из (24) и (25) в (23), получим:
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f22.gif" height="57" width="164">(26)
+</p>
+<p>
+На участке насыщения кривой намагничивания для напряженности магнитного поля имеем <em>H </em>= <em>Wi</em><sub>2</sub>/<em>l</em>, а на рабочем участке — <em>b </em>= <em>h</em>&#956;<sub>1</sub>. Подставим последние выражения в (26). В результате элементарных преобразований будем иметь:
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f23.gif" height="66" width="202">(27)
+</p>
+<p>
+Полученное выражение для тока <em>i<sub>2</sub> </em>позволяет грубо 
+оценить пиковое значение переходного тока силового трансформатора при 
+включении его в сеть с синусоидальным напряжением, когда фаза напряжения
+ проходит через нуль (самый неблагоприятный случай). Анализируя 
+зависимость (27), можно заметить, что на величину пускового тока 
+наиболее сильное влияние оказывает количество витков первичной обмотки 
+трансформатора. Увеличение сечения керна также приводит к уменьшению 
+тока, но в меньшей степени. Еще в меньшей степени на пусковой ток влияет
+ длина средней магнитной линии. Все это говорит о том, что на величину 
+пускового тока можно влиять через эти параметры.
+</p>
+<p>
+Следует заметить, что формула (27) записана для участка насыщения, на котором выполняется неравенство <em>В&gt;</em><em>b</em><em>, </em>и
+ если оно нарушается, то можно получить отрицательные значения тока. 
+Физически это будет означать, что пусковой ток силового трансформатора 
+не превышает допустимый ток и поэтому весь переходный процесс 
+укладывается на рабочем участке кривой намагничивания. Другими словами, <em>i</em><em><sub>2</sub></em><em> = </em>0.
+</p>
+<p>
+Для выбранного нами трансформатора рассчитаем пик пускового тока <em>i<sub>2</sub> </em>по формуле (27):
+</p>
+<p>
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_f24.gif" height="147" width="296">
+</p>
+<p>
+Таким образом, при включении силового трансформатора в сеть может 
+возникнуть всплеск тока более 100 ампер. Точный расчет токов по формулам
+ (10) и (11) дает <em>i </em><sub>2</sub> = 100 A, что на 17% ниже. Это расхождение с точным расчетом будет тем меньше, чем сильней выполняется неравенство &#969;L<sub>2</sub>&gt;&gt;r, но для грубой оценки этого вполне достаточно.
+</p>
+<p>
+Сравнение расчетов токов по формулам (10), (11) и расчета этих же токов,
+ но через дифференциальное уравнение (4) с использованием численных 
+методов и сплайн-аппроксимации кривой намагничивания, показало, что оба 
+метода расчета дают очень близкий результат. В области больших токов 
+результаты вычисления обеими методами практически совпадают. В области 
+малых токов есть расхождения, которые связаны с неточным 
+воспроизведением формы намагничивающего тока. Это расхождение 
+определяется отклонением начального участка кривой намагничивания от 
+прямой линии. Таким образом, можно с успехом использовать оба метода 
+расчета.
+</p>
+<p>
+Ниже произведены расчеты переходных процессов в трансформаторах с 
+различным числом витков. Расчеты произведены через решение 
+дифференциального уравнения (4) с использованием численного метода 
+Рунге-Кутта 4-5-го порядка.
+</p>
+<p>
+Из графика на рис. 2 видно, что трансформатор с первичной обмоткой в 275
+ витков имеет пусковой ток около 100 А. На этом же рисунке можно 
+проследить, как влияет изменение количества витков первичной обмотки на 
+пусковой ток.
+</p>
+<div class="ris">
+<img alt="Рис. 2. Пусковой ток трансформатора для различного числа витков первичной обмотки" src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_ris02.gif" height="343" width="460">
+</div>
+<div class="ris">
+Рис. 2. Пусковой ток силового трансформатора для различного числа витков первичной обмотки
+</div>
+<p>
+Кривая тока переходного процесса представлена на <a href="http://www.power-e.ru/img/articles/2005_04_34_ris03.gif" target="_blank">рис. 3</a>.
+ Из данного графика видно, что максимальный ток достигает 100 А. Этот же
+ график позволяет оценить и постоянную времени переходного процесса.
+</p>
+<p>
+На рис. 4 представлен график установившегося тока. Установившийся ток 
+рассчитан для случая, когда начальная фаза сети равна &#960;/2. В этом случае
+ включение силового трансформатора проходит без переходных процессов, 
+что видно из рис. 4. На этом же рисунке просматривается нелинейный 
+характер тока намагничивания.
+</p>
+<div class="ris">
+<img alt="Рис. 4. Ток установившегося режима, &#966;=&#960;/2" src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/2005_04_34_ris04.gif" height="217" width="520">
+</div>
+<div class="ris">
+Рис. 4. Ток установившегося режима, &#966;=&#960;/2
+</div>
+<p>
+Для подтверждения теоретических вычислений проводились испытания с 
+несколькими силовыми трансформаторами. Включение трансформаторов 
+проводилось на напряжение 220 В при нулевой фазе. Результаты испытаний 
+приводятся в <a href="http://www.power-e.ru/img/articles/2005_04_34_tab02.gif" target="_blank">таблице 2</a>.
+</p>
+<h2>Основные выводы </h2>
+<ol start="1">
+	<li>Увеличение числа витков и сечения керна магнитопровода приводит к 
+снижению пускового тока трансформатора. Увеличение числа витков вдвое 
+уменьшает пусковой ток до величины, не превышающий номинальное значение 
+тока холостого хода. Однако указанные меры приводят к увеличению потерь в
+ проводах обмоток и стали сердечника, а также к увеличению 
+массогабаритных показателей силового трансформатора и его стоимости.</li>
+	<li>Наиболее эффективным способом уменьшения пускового тока является 
+обеспечение подключения силового трансформатора к питающей сети в момент
+ достижения максимального мгновенного значения напряжения, то есть при 
+&#966;=&#960;/2</li>
+</ol>
+<h2>Литература </h2>
+<ol start="1">
+	<li>Касаткин А. С, Немцов М. В. Электротехника. М.: Высшая школа, 2000.</li>
+</ol>
+<div class="text" align="left"><a href="http://www.power-e.ru/pdf/2005_04_34.pdf" target="_blank"><strong>Скачать статью в формате pdf</strong><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/pdf.gif" border="0" height="40" width="40" align="absmiddle"></a></div><h2>Другие статьи по этой теме</h2><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/divider.gif" hspace="20"><ul><li><a href="http://www.power-e.ru/2004_02_78.php">Проектирование импульсных источников питания на базе интегральных микросхем фирмы Power Integrations</a></li><li><a href="http://www.power-e.ru/2006_03_40.php">Рассмотрение
+ лавинных процессов в полевых транзисторах серии CoolMOS™ при их 
+использовании в импульсных источниках питания. Часть 1</a></li><li><a href="http://www.power-e.ru/2006_02_50.php">Разряд конденсаторных батарей установок компенсации реактивной мощности</a></li><li><a href="http://www.power-e.ru/2007_02_32.php">Новая
+ интегральная микросхема драйвера 2ED020I12-F для IGBT / MOSFET 
+транзисторов на основе технологии встроенного силового трансформатора 
+без сердечника (CLT – Coreless Transformer)</a></li><li><a href="http://www.power-e.ru/2005_04_41.php">Семейство статических преобразователей напряжения нового поколения в силовой электронике</a></li><li><a href="http://www.power-e.ru/2007_4_24.php">Новая
+ интегральная микросхема драйвера 2ED020I12-F для IGBT / MOSFET силовых 
+транзисторов на основе технологии встроенного трансформатора без 
+сердечника (CLT – Coreless Transformer)</a></li><li><a href="http://www.power-e.ru/.php">Новости рубрики «Компоненты силовой электроники»</a></li><li><a href="http://www.power-e.ru/2004_01_70.php">Применение планарных силовых трансформаторов и плат на алюминиевой подложке в современных источниках питания</a></li></ul>
+
+<br></div>
+      </td>
+    <td bgcolor="#0C4DA2" width="4">&nbsp;</td>
+    <td bgcolor="#FFFFFF" valign="top" width="203">
+<div id="buttons_adv">
+<div class="advert">
+<div style="text-align:center;"><!--[if IE]><object classid="clsid:25336920-03F9-11CF-8FD0-00AA00686F13" data="/link.php?url=http://banner.kit-e.ru/banner_show.php&amp;rotator=14" style="width:202px; height:205px; overflow:hidden; border:none;"> <p>Your browser doesn't support objects</p></object><![endif]--><!--[if !IE]> <--><object type="text/html" data="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/banner_show_003.htm" style="width: 200px; height: 205px; overflow: hidden; border: medium none;"> <p>Your browser doesn't support objects</p></object><!----> <!--[endif]----></div>
+</div>
+</div>
+
+<div id="sidebar2">
+    <img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/news.gif" height="18" hspace="1" vspace="1" width="203">
+<div class="news"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/bul_2.gif"> <b>03.04.2012</b><br>
+<a href="http://www.power-e.ru/efo_03_04_12_1.php" class="no_dec">DC-link конденсаторы постоянного тока для промышленности и альтернативных источников энергии</a><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/news_div.gif"></div><div class="news"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/bul_2.gif"> <b>03.04.2012</b><br>
+<a href="http://www.power-e.ru/efo_03_04_12.php" class="no_dec">Новые модули EconoDUAL3 с кристаллом IGBT4 и рабочим напряжением 650 В</a><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/news_div.gif"></div><div class="news"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/bul_2.gif"> <b>28.03.2012</b><br>
+<a href="http://www.power-e.ru/efo_3_28_03_12.php" class="no_dec">Новые MOSFET без использования свинца в стандартных корпусах TO для автомобильных применений</a><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/news_div.gif"></div><div class="news"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/bul_2.gif"> <b>28.03.2012</b><br>
+<a href="http://www.power-e.ru/efo_2_28_03_12.php" class="no_dec">Новые транзисторы CoolMOS C6/E6 с рабочим напряжением 600 и 650 В</a><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/news_div.gif"></div><div class="news"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/bul_2.gif"> <b>23.03.2012</b><br>
+<a href="http://www.power-e.ru/efo_23_03_12.php" class="no_dec">Новые транзисторы OptiMOS от Infineon с рабочим напряжением 40 и 60 В</a><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/news_div.gif"></div>
+<div class="news"><a href="http://www.power-e.ru/270.php">АРХИВ НОВОСТЕЙ &gt;&gt;</a></div>
+
+    <script type="text/javascript">
+    function validate_email(field,alerttxt)
+    {
+    with (field)
+    {
+    apos=value.indexOf("@")
+    dotpos=value.lastIndexOf(".")
+    if (apos<1||dotpos-apos<2) 
+      {alert(alerttxt);return false}
+    else {return true}
+    }
+    }
+
+    function validate_form(thisform)
+    {
+    with (thisform)
+    {
+    if (validate_email(email,"<div class=news>Вы ввели некорректный e-mail, попробуйте еще раз.</div>")==false)
+      {email.focus();return false}
+    }
+    }
+    </script><form action="" onsubmit="return validate_form(this);" method="post">
+<input name="option" value="subscribe" type="hidden">
+<div id="podpiska">ПОДПИСКА НА НОВОСТИ<br><br><input name="email" class="text" size="20" maxlength="100" id="email" value="Введите Ваш e-mail" type="text">
+<input class="text" value="Ok" type="submit">
+</div>
+</form>
+<div id="news_adv">
+
+</div>
+
+<div align="center"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/opros.gif" height="20" hspace="1" vspace="10" width="203"><table bgcolor="#FFFFFF" border="0" cellpadding="1" cellspacing="0" width="92%" align="center">
+  <tbody><tr align="center">
+    <td>
+      <table bgcolor="#FFFFFF" border="0" cellpadding="2" cellspacing="0" width="100%" align="center">
+        <tbody><tr>
+          <td valign="middle"><font color="#000000" face="Verdana, Arial, Helvetica, sans-serif" size="1"><b>Оцените, пожалуйста, удобство и практичность (usability) сайта:</b></font></td>
+        </tr>
+        <tr valign="top" align="right">
+          <td>
+            <form method="post" action="index.php">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
+              <tbody><tr valign="top" align="center">
+                <td>
+                  <table border="0" cellpadding="1" cellspacing="0" width="100%" align="center">
+<tbody><tr>
+    <td width="15%"><input name="option_id" value="Хорошо" type="radio"></td>
+    <td width="85%" align="left"><font color="#000000" face="Verdana, Arial, Helvetica, sans-serif" size="1">Хорошо</font></td>
+</tr>
+<tr>
+    <td width="15%"><input name="option_id" value="Нормально" type="radio"></td>
+    <td width="85%" align="left"><font color="#000000" face="Verdana, Arial, Helvetica, sans-serif" size="1">Нормально</font></td>
+</tr>
+<tr>
+    <td width="15%"><input name="option_id" value="Плохо" type="radio"></td>
+    <td width="85%" align="left"><font color="#000000" face="Verdana, Arial, Helvetica, sans-serif" size="1">Плохо</font></td>
+</tr>
+                    </tbody></table>
+                    <input name="action" value="vote" type="hidden">
+                    <input name="poll_ident" value="4" type="hidden">
+                    <input value="Ответить" class="input" type="submit">
+                    <br>
+                   <font color="#000000" face="Verdana, Arial, Helvetica, sans-serif" size="1"><div align="center"></div></font></td>
+                </tr>
+              </tbody></table>
+            </form>
+            </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+</tbody></table>
+</div>
+<div align="center">
+<div id="adv">
+<img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/reklama.gif" height="20" hspace="1" vspace="1" width="203">
+</div>
+<script type="text/javascript"><!--
+yandex_partner_id = 57240;
+yandex_site_bg_color = 'FFFFFF';
+yandex_site_charset = 'windows-1251';
+yandex_ad_format = 'direct';
+yandex_font_size = 0.6;
+yandex_direct_type = 'vertical';
+yandex_direct_border_type = 'ad';
+yandex_direct_limit = 9;
+yandex_direct_header_bg_color = 'CCCCCC';
+yandex_direct_bg_color = 'FFFFFF';
+yandex_direct_border_color = 'CCCCCC';
+yandex_direct_title_color = '666666';
+yandex_direct_url_color = '666666';
+yandex_direct_all_color = '000000';
+yandex_direct_text_color = '000000';
+yandex_direct_hover_color = 'CCCCCC';
+document.write('<sc'+'ript type="text/javascript" src="http://an.yandex.ru/system/context.js"></sc'+'ript>');
+//--></script><script type="text/javascript" src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/context.htm"></script>
+</div>
+
+
+</div>
+</td>
+  </tr>
+</tbody></table>
+<div id="down_div"><img src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/spacer.gif"></div>
+<div id="footer">
+    <div id="sidebar1">
+      <div class="text" style="padding:10px" align="center">Finestreet © 2011</div>
+    </div>
+    <div id="sidebar2">
+      <div class="text" style="padding:10px" align="right"> Тел: (812) 438-15-38<br>Факс: (812) 346-06-65</div>
+    </div>
+    <div id="mainContent">
+      <div class="text" style="padding:10px" align="center">
+	<span align="center">| <a href="http://www.power-e.ru/components.php" title="Компоненты силовой электроники">Компоненты силовой электроники</a></span>
+
+<span align="center">| <a href="http://www.power-e.ru/connector.php" title="Силовые разъемы">Силовые разъемы</a></span>
+
+<span align="center">| <a href="http://www.power-e.ru/electrodrives.php" title="Электроприводы">Электроприводы</a></span>
+
+<span align="center">| <a href="http://www.power-e.ru/power_supply.php" title="Источники питания">Источники питания</a></span>
+
+<span align="center">| <a href="http://www.power-e.ru/cooling.php" title="Системы охлаждения">Системы охлаждения</a></span>
+
+<span align="center">| <a href="http://www.power-e.ru/heating.php" title="Индукционный нагрев">Индукционный нагрев</a></span>
+
+<span align="center">| <a href="http://www.power-e.ru/emc.php" title="Электромагнитная совместимость">Электромагнитная совместимость</a></span>
+
+<span align="center">| <a href="http://www.power-e.ru/equipment.php" title="Оборудование">Оборудование</a></span>
+
+<span align="center">| <a href="http://www.power-e.ru/autoelectronics.php" title="Автомобильная электроника">Автомобильная электроника</a></span>
+
+<span align="center">| <a href="http://www.power-e.ru/quality.php" title="Качество электроэнергии">Качество электроэнергии</a></span>
+
+<span align="center">| <a href="http://www.power-e.ru/sapr.php" title="Софт">Софт</a></span>
+
+<span align="center">| <a href="http://www.power-e.ru/tech.php" title="Технологии">Технологии силовой электроники</a></span>
+
+<span align="center">| <a href="http://www.power-e.ru/datas.php" title="Справочные материалы">Справочные материалы</a></span>
+
+
+	<span align="center">| <a href="http://www.power-e.ru/paramsearch.php" title="Параметрический поиск источников питания">Параметрический поиск источников питания </a></span>
+</div>
+    </div>
+</div>
+<script type="text/javascript">
+function disableSelection(target){
+if (typeof target.onselectstart!="undefined")
+    target.onselectstart=function(){return false}
+else if (typeof target.style.MozUserSelect!="undefined")
+    target.style.MozUserSelect="none"
+else
+    target.onmousedown=function(){return false}
+target.style.cursor = "default"
+}
+
+if (document.getElementById("mainContent")) { 
+disableSelection(document.getElementById("mainContent"));
+}
+</script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="%D0%9F%D1%80%D0%BE%20%D0%B4%D0%B8%D1%84%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82%20%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D1%86_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3694617-2");
+pageTracker._trackPageview();
+</script>
+</div></body></html>
